@@ -150,22 +150,20 @@ const DeleteAccountForm: React.FC = () => {
               disabled={loading}
               error={!!error}
             />
-            <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+            <p className="mt-1.5 text-xs text-gray-400">
               أدخل رقم هاتفك المسجل في التطبيق
             </p>
           </div>
 
           {error && (
-            <div className="rounded-lg border border-red-200 bg-red-50 p-3 dark:border-red-800 dark:bg-red-900/20">
-              <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+            <div className="rounded-lg border border-red-800 bg-red-900/20 p-3">
+              <p className="text-sm text-red-400">{error}</p>
             </div>
           )}
 
           {success && (
-            <div className="rounded-lg border border-green-200 bg-green-50 p-3 dark:border-green-800 dark:bg-green-900/20">
-              <p className="text-sm text-green-600 dark:text-green-400">
-                {success}
-              </p>
+            <div className="rounded-lg border border-green-800 bg-green-900/20 p-3">
+              <p className="text-sm text-green-400">{success}</p>
             </div>
           )}
 
@@ -184,13 +182,8 @@ const DeleteAccountForm: React.FC = () => {
       {step === "otp" && (
         <Form onSubmit={handleOtpSubmit} className="space-y-4">
           <div className="mb-4 text-center">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              تم إرسال رمز التحقق إلى
-            </p>
-            <p
-              className="mt-1 text-lg font-medium text-gray-900 dark:text-white"
-              dir="ltr"
-            >
+            <p className="text-sm text-gray-400">تم إرسال رمز التحقق إلى</p>
+            <p className="mt-1 text-lg font-medium text-white" dir="ltr">
               {formData.phoneNumber}
             </p>
           </div>
@@ -213,22 +206,20 @@ const DeleteAccountForm: React.FC = () => {
               error={!!error}
               className="text-center text-2xl tracking-widest"
             />
-            <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+            <p className="mt-1.5 text-xs text-gray-400">
               أدخل رمز التحقق المكون من 4 أرقام
             </p>
           </div>
 
           {error && (
-            <div className="rounded-lg border border-red-200 bg-red-50 p-3 dark:border-red-800 dark:bg-red-900/20">
-              <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+            <div className="rounded-lg border border-red-800 bg-red-900/20 p-3">
+              <p className="text-sm text-red-400">{error}</p>
             </div>
           )}
 
           {success && (
-            <div className="rounded-lg border border-green-200 bg-green-50 p-3 dark:border-green-800 dark:bg-green-900/20">
-              <p className="text-sm text-green-600 dark:text-green-400">
-                {success}
-              </p>
+            <div className="rounded-lg border border-green-800 bg-green-900/20 p-3">
+              <p className="text-sm text-green-400">{success}</p>
             </div>
           )}
 
