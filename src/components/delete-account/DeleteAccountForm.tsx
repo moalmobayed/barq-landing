@@ -24,6 +24,8 @@ const DeleteAccountForm: React.FC = () => {
   const [error, setError] = useState<string>("");
   const [success, setSuccess] = useState<string>("");
 
+  const API_BASE_URL = "https://api.barqshipping.com/api/v1";
+
   // Validate Egyptian phone number (starts with 01 and has 11 digits)
   const validateEgyptianPhone = (phone: string): boolean => {
     const phoneRegex = /^01[0-2,5]{1}[0-9]{8}$/;
@@ -47,13 +49,18 @@ const DeleteAccountForm: React.FC = () => {
     setLoading(true);
 
     try {
-      // TODO: Replace with your actual API endpoint
-      const response = await axios.post("/api/delete-account/send-otp", {
-        phoneNumber: formData.phoneNumber,
-      });
+      // Direct call to backend API
+      const response = await axios.post(
+        `${API_BASE_URL}/admin/delete-account-request`,
+        {
+          mobile: formData.phoneNumber,
+        },
+      );
 
-      if (response.data.success) {
-        setSuccess(response.data.message);
+      if (response.data) {
+        setSuccess(
+          response.data.message || "تم إرسال رمز التحقق إلى رقم هاتفك",
+        );
         setStep("otp");
       }
     } catch (err) {
@@ -85,14 +92,22 @@ const DeleteAccountForm: React.FC = () => {
     setLoading(true);
 
     try {
-      // TODO: Replace with your actual API endpoint
-      const response = await axios.post("/api/delete-account/verify-otp", {
-        phoneNumber: formData.phoneNumber,
-        otp: formData.otp,
-      });
+      // Direct call to backend API
+      const response = await axios.delete(
+        `${API_BASE_URL}/admin/delete-account`,
+        {
+          data: {
+            mobile: formData.phoneNumber,
+            code: formData.otp,
+          },
+        },
+      );
 
-      if (response.data.success) {
-        setSuccess("تم حذف حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية...");
+      if (response.data) {
+        setSuccess(
+          response.data.message ||
+            "تم حذف حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية...",
+        );
         // Redirect after 3 seconds
         setTimeout(() => {
           window.location.href = "/";
