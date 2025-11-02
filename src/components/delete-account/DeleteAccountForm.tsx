@@ -6,6 +6,7 @@ import Form from "@/components/form/Form";
 import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
+import { API_BASE_URL } from "@/config/api.config";
 
 type Step = "phone" | "otp";
 
@@ -23,8 +24,6 @@ const DeleteAccountForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>("");
   const [success, setSuccess] = useState<string>("");
-
-  const API_BASE_URL = "https://api.barqshipping.com/api/v1";
 
   // Validate Egyptian phone number (starts with 01 and has 11 digits)
   const validateEgyptianPhone = (phone: string): boolean => {
