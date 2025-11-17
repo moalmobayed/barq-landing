@@ -4,9 +4,9 @@
 
 @theme {
   --font-*: initial;
-  --font-outfit: Outfit, sans-serif;
-  --font-cairo: Cairo, sans-serif;
-  --font-rubik: Rubik, sans-serif;
+  --font-lexend: Lexend, sans-serif;
+  --font-inter: Inter, sans-serif;
+  --font-manrope: Manrope, sans-serif;
 
   --breakpoint-*: initial;
   --breakpoint-2xsm: 375px;
@@ -55,6 +55,7 @@
 
   --color-brand-blue: #0e197a;
   --color-brand-yellow: #ffce00;
+  --color-brand-orange: #fb5b29;
   --color-brand-gray: #9d9d9d;
 
   --color-blue-light-25: #f5fbff;
@@ -194,10 +195,9 @@
     cursor: pointer;
   }
   body {
-    @apply font-cairo relative z-1 bg-gray-50 font-normal;
+    @apply font-manrope relative z-1 bg-gray-50 font-normal;
   }
 }
-
 
 .flatpickr-wrapper {
   @apply w-full;
@@ -336,7 +336,8 @@ span.flatpickr-weekday,
 .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
   box-shadow: -10px 0 0 #465fff;
 }
-.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
   @apply !text-gray-300 dark:!text-white/20;
 }
 
