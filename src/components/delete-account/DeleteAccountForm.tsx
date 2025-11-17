@@ -218,7 +218,7 @@ const DeleteAccountForm: React.FC = () => {
               required
               disabled={loading}
               error={!!error}
-              className="text-center text-2xl tracking-widest"
+              className="text-center text-2xl tracking-widest text-white"
             />
             <p className="mt-1.5 text-xs text-gray-400">
               أدخل رمز التحقق المكون من 4 أرقام
