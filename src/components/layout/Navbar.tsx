@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
   const isPartnersActive = pathname.startsWith("/partners");
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
+    <nav className="font-inter fixed top-0 z-50 w-full backdrop-blur-xs">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
         {/* Logo */}
         <div className="flex items-center">
@@ -45,10 +45,10 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-orange-500 ${
+              className={`hover:text-brand-orange text-sm font-medium transition-colors ${
                 isActive(link.href)
-                  ? "font-semibold text-orange-500"
-                  : "text-gray-700"
+                  ? "text-brand-orange font-semibold"
+                  : "text-brand-blue"
               }`}
             >
               {link.name}
@@ -59,9 +59,9 @@ const Navbar: React.FC = () => {
           <div className="relative">
             <button
               onClick={() => setIsPartnersOpen(!isPartnersOpen)}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-orange-500 ${
+              className={`hover:text-brand-orange flex items-center gap-1 text-sm font-medium transition-colors ${
                 isPartnersActive
-                  ? "font-semibold text-orange-500"
+                  ? "text-brand-orange font-semibold"
                   : "text-gray-700"
               }`}
             >
@@ -106,7 +106,7 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="rounded-lg bg-orange-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 xl:px-6 xl:py-3"
+            className="rounded-lg bg-brand-orange px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 xl:px-6 xl:py-3"
           >
             Contact US
           </Link>
@@ -158,9 +158,9 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`block rounded-lg px-3 py-2 text-base font-medium hover:bg-gray-50 hover:text-orange-500 ${
+                className={`hover:text-brand-orange block rounded-lg px-3 py-2 text-base font-medium hover:bg-gray-50 ${
                   isActive(link.href)
-                    ? "bg-orange-50 font-semibold text-orange-500"
+                    ? "text-brand-orange bg-orange-50 font-semibold"
                     : "text-gray-700"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -173,9 +173,9 @@ const Navbar: React.FC = () => {
             <div>
               <button
                 onClick={() => setIsPartnersOpen(!isPartnersOpen)}
-                className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-base font-medium hover:bg-gray-50 hover:text-orange-500 ${
+                className={`hover:text-brand-orange flex w-full items-center justify-between rounded-lg px-3 py-2 text-base font-medium hover:bg-gray-50 ${
                   isPartnersActive
-                    ? "bg-orange-50 font-semibold text-orange-500"
+                    ? "text-brand-orange bg-orange-50 font-semibold"
                     : "text-gray-700"
                 }`}
               >
@@ -225,7 +225,7 @@ const Navbar: React.FC = () => {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="block rounded-lg bg-orange-500 px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-orange-600"
+                className="block rounded-lg bg-brand-orange px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-orange-600"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact US
