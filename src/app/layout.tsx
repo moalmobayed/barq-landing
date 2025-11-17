@@ -1,16 +1,20 @@
-import { Rubik } from "next/font/google";
+import { Lexend, Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
 
-// const outfit = Outfit({
-//   subsets: ["latin"],
-// });
-
-// const cairo = Cairo({
-//   subsets: ["latin"],
-// });
-
-const rubik = Rubik({
+const lexend = Lexend({
   subsets: ["latin"],
+  variable: "--font-lexend",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
 });
 
 export default function RootLayout({
@@ -19,8 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
-      <body className={`${rubik.className} dark:bg-gray-900`}>{children}</body>
+    <html lang="en" dir="ltr">
+      <body
+        className={`${lexend.variable} ${inter.variable} ${manrope.variable} bg-white dark:bg-gray-900`}
+      >
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
