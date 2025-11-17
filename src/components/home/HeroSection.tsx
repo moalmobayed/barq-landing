@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen content-center bg-linear-to-br from-gray-50 to-white py-20 md:py-28 lg:h-screen lg:py-0">
+    <section className="relative min-h-screen content-center bg-linear-to-br from-gray-50 to-white pb-20 md:py-28 lg:h-screen lg:py-0">
       <div className="mx-auto mt-20 grid max-w-7xl items-center gap-8 px-4 md:mt-24 md:px-6 lg:grid-cols-2 lg:gap-12">
         {/* Left Content */}
         <div className="space-y-4 text-center sm:space-y-6 lg:space-y-8 lg:text-left">
