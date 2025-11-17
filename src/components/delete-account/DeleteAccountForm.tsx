@@ -149,7 +149,7 @@ const DeleteAccountForm: React.FC = () => {
       {step === "phone" && (
         <Form onSubmit={handlePhoneSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="phoneNumber" required>
+            <Label htmlFor="phoneNumber">
               رقم الهاتف المحمول
             </Label>
             <Input
@@ -203,7 +203,7 @@ const DeleteAccountForm: React.FC = () => {
           </div>
 
           <div>
-            <Label htmlFor="otp" required>
+            <Label htmlFor="otp">
               رمز التحقق (OTP)
             </Label>
             <Input
@@ -213,7 +213,7 @@ const DeleteAccountForm: React.FC = () => {
               placeholder="0000"
               value={formData.otp}
               onChange={handleInputChange}
-              maxLength={4}
+              max="4"
               dir="ltr"
               required
               disabled={loading}
