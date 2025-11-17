@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
               className={`hover:text-brand-orange flex items-center gap-1 text-sm font-medium transition-colors ${
                 isPartnersActive
                   ? "text-brand-orange font-semibold"
-                  : "text-gray-700"
+                  : "text-brand-blue"
               }`}
             >
               Partners

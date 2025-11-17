@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
           </p>
 
           {/* App Store Buttons */}
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4 lg:items-start">
+          <div className="flex flex-col items-center gap-3 justify-center lg:justify-start sm:flex-row sm:gap-4 lg:items-start">
             <Link
               href="https://play.google.com/store"
               target="_blank"
@@ -81,7 +81,7 @@ const HeroSection: React.FC = () => {
             alt="Barq App Interface"
             width={600}
             height={1200}
-            className="relative z-10 h-auto w-full max-w-[300px] sm:max-w-sm md:max-w-md"
+            className="relative z-10 h-auto w-full max-w-[300px] sm:max-w-sm xl:max-w-md"
             priority
           />
         </div>
