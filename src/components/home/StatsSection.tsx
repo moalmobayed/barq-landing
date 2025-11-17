@@ -6,17 +6,17 @@ const StatsSection: React.FC = () => {
     {
       number: "1,879+",
       label: "Positive Reviews",
-      icon: "/images/icons/positive-reviews.png",
+      icon: "/icons/positive-reviews.png",
     },
     {
       number: "3,855+",
       label: "Restaurant Listings",
-      icon: "/images/icons/restaurant-listings.png",
+      icon: "/icons/restaurant-listings.png",
     },
     {
       number: "985M+",
       label: "Successful deliveries",
-      icon: "/images/icons/successful-deliveries.png",
+      icon: "/icons/successful-deliveries.png",
     },
   ];
 
