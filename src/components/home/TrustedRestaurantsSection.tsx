@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoPlay from "embla-carousel-autoplay";
+import Button from "../common/Button";
 import res1 from "../../images/restaurants/res1.png";
 import res2 from "../../images/restaurants/res2.png";
 import res3 from "../../images/restaurants/res3.png";
@@ -78,12 +78,9 @@ const TrustedRestaurantsSection: React.FC = () => {
         </div>
 
         {/* CTA Button */}
-        <Link
-          href="/register-restaurant"
-          className="bg-brand-orange flex font-manrope justify-self-center rounded-lg px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-lg sm:px-8 sm:py-4"
-        >
-          Register Your Restaurant
-        </Link>
+        <div className="flex justify-center">
+          <Button href="/register-restaurant">Register Your Restaurant</Button>
+        </div>
       </div>
     </section>
   );
