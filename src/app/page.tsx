@@ -1,5 +1,6 @@
 import HeroSection from "@/components/home/HeroSection";
 import StatsSection from "@/components/home/StatsSection";
+import TrustedRestaurantsSection from "@/components/home/TrustedRestaurantsSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <StatsSection />
+      <TrustedRestaurantsSection />
     </main>
   );
 }
