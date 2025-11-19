@@ -10,8 +10,8 @@ export default function NotFound() {
   return (
     <>
       <style>{`
-        body { font-family: "Tajawal", "Segoe UI", Arial, sans-serif; line-height:1.7; direction: rtl; padding: 24px; background:#f7f7fb; color:#111;}
-        .container { max-width:900px; margin:20px auto; background:#fff; padding:28px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.06);}
+        body { font-family: "Tajawal", "Segoe UI", Arial, sans-serif; line-height:1.7; direction: rtl; background:#f7f7fb; color:#111;}
+        .container { max-width:900px; margin:64px auto; background:#fff; padding:28px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.06);}
         h1,h2,h3 { color:#0a3d62; margin-top:18px; font-size: 2rem; font-weight: 500; }
         p { margin:8px 0; }
         .muted { color:#555; font-size:0.95rem; }
