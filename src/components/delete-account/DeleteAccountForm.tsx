@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Form from "@/components/form/Form";
-import Input from "@/components/form/input/InputField";
+import Input from "@/components/form/InputField";
 import Label from "@/components/form/Label";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/common/Button";
 import { API_BASE_URL } from "@/config/api.config";
 
 type Step = "phone" | "otp";
