@@ -114,7 +114,4 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
-  body {
-    @apply font-manrope relative z-1 font-normal;
-  }
 }
