@@ -96,7 +96,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#fb5a29" />
       </head>
       <body
-        className={`${lexend.variable} ${inter.variable} ${manrope.variable} bg-white dark:bg-gray-900`}
+        className={`${lexend.variable} ${inter.variable} ${manrope.variable} bg-[#FFCE000D] dark:bg-gray-900`}
       >
         <Navbar />
         {children}
