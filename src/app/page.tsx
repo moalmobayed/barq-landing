@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import HowItWorksSection from "@/components/home/HowItWorksSection";
 import DishesSection from "@/components/home/DishesSection";
 import RegisterRestaurantSection from "@/components/home/RegisterRestaurantSection";
+import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
 
 export const metadata: Metadata = {
   title: "Barq - Fast and Reliable Delivery Services",
@@ -23,6 +24,7 @@ export default function HomePage() {
       <HowItWorksSection />
       <DishesSection />
       <RegisterRestaurantSection />
+      <WhyChooseUsSection />
     </main>
   );
 }
