@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 export default function DeleteAccountPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900 p-4">
+    <div className="flex min-h-screen items-center mt-16 justify-center bg-gray-50 p-4">
       <GridShape />
       <div className="w-full max-w-md">
-        <div className="rounded-xl bg-gray-800 p-6 shadow-lg md:p-8">
+        <div className="rounded-xl bg-white p-6 shadow-lg md:p-8">
           <div className="mb-8 text-center">
             <Image
               src="/images/logo/barq-logo.png"
@@ -23,16 +23,18 @@ export default function DeleteAccountPage() {
               height={100}
               className="mx-auto mb-4"
             />
-            <h1 className="mb-2 text-2xl font-bold text-white">حذف الحساب</h1>
-            <p className="text-sm text-gray-400">
+            <h1 className="mb-2 text-2xl font-bold text-gray-900">
+              حذف الحساب
+            </h1>
+            <p className="text-sm text-gray-600">
               لحذف حسابك، يرجى إدخال رقم هاتفك والتحقق منه
             </p>
           </div>
 
           <DeleteAccountForm />
 
-          <div className="mt-6 rounded-lg border border-yellow-800 bg-yellow-900/20 p-4">
-            <p className="text-xs text-yellow-200">
+          <div className="mt-6 rounded-lg border border-orange-200 bg-orange-50 p-4">
+            <p className="text-xs text-orange-900">
               <strong>تحذير:</strong> حذف الحساب عملية دائمة ولا يمكن التراجع
               عنها. سيتم حذف جميع بياناتك نهائياً.
             </p>
