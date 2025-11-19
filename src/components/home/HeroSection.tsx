@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import heroBurger from "../../images/hero/hero-burger.png";
+import heroPhone from "../../images/hero/hero-phone.png";
 
 const HeroSection: React.FC = () => {
   return (
@@ -21,7 +23,7 @@ const HeroSection: React.FC = () => {
           </p>
 
           {/* App Store Buttons */}
-          <div className="flex flex-col items-center gap-3 justify-center lg:justify-start sm:flex-row sm:gap-4 lg:items-start">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 lg:items-start lg:justify-start">
             <Link
               href="https://play.google.com/store"
               target="_blank"
@@ -77,7 +79,7 @@ const HeroSection: React.FC = () => {
         {/* Right Content - Main Phone */}
         <div className="relative flex justify-center lg:justify-end">
           <Image
-            src="/images/hero-phone.png"
+            src={heroPhone}
             alt="Barq App Interface"
             width={600}
             height={1200}
@@ -89,7 +91,7 @@ const HeroSection: React.FC = () => {
 
       {/* Burger Image - Full Height of Section */}
       <Image
-        src="/images/hero-burger.png"
+        src={heroBurger}
         alt="Delicious Burger"
         fill
         className="pointer-events-none absolute top-0 right-0 bottom-0 hidden h-full w-[400px] object-contain object-right lg:block xl:w-[600px] 2xl:w-[800px]"
