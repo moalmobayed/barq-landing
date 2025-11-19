@@ -10,7 +10,9 @@ const SectionDescription: React.FC<SectionDescriptionProps> = ({
   className = "",
 }) => {
   return (
-    <p className={`font-inter text-sm text-gray-600 sm:text-base ${className}`}>
+    <p
+      className={`font-inter max-w-2xl justify-self-center text-sm text-gray-600 sm:text-base ${className}`}
+    >
       {children}
     </p>
   );
