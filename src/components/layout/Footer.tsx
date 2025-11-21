@@ -13,6 +13,7 @@ import {
   FaPaperPlane,
   FaPhoneAlt,
 } from "react-icons/fa";
+import GradualBlurMemo from "../GradualBlur";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -46,7 +47,7 @@ const Footer: React.FC = () => {
       <div className="bg-brand-orange/60 pointer-events-none absolute -top-40 left-1/4 size-72 -translate-x-1/2 rounded-full blur-[120px]"></div>
       <div className="bg-brand-orange/60 pointer-events-none absolute right-0 bottom-0 size-72 rounded-full blur-[100px]"></div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 pt-32 sm:pt-40 lg:px-8 lg:py-16 lg:pt-40">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 pt-32 sm:px-6 sm:pt-40 lg:px-8 lg:py-16 lg:pt-40">
         {/* Main Footer Content */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           {/* Brand & Contact Column */}
@@ -143,7 +144,9 @@ const Footer: React.FC = () => {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="mb-6 text-lg font-bold border-s-[3px] ps-2">Quick Links</h3>
+            <h3 className="mb-6 border-s-[3px] ps-2 text-lg font-bold">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -160,7 +163,9 @@ const Footer: React.FC = () => {
 
           {/* Subscribe Column */}
           <div>
-            <h3 className="mb-6 text-lg font-bold border-s-[3px] ps-2">Subscribe us</h3>
+            <h3 className="mb-6 border-s-[3px] ps-2 text-lg font-bold">
+              Subscribe us
+            </h3>
             <p className="mb-6 text-sm leading-relaxed text-gray-300">
               Subscribe our newsletter to receive latest updates regularly from
               us!
@@ -209,7 +214,7 @@ const Footer: React.FC = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center group justify-center rounded-full border border-white/30 transition-all hover:border-orange-500 hover:bg-orange-500/10"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/30 transition-all hover:border-orange-500 hover:bg-orange-500/10"
                   aria-label={social.label}
                 >
                   <Icon className="h-4 w-4 text-white/50 transition-colors group-hover:text-white" />
@@ -219,6 +224,17 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <GradualBlurMemo
+        target="page"
+        position="bottom"
+        height="3rem"
+        strength={2}
+        divCount={2}
+        curve="bezier"
+        exponential={false}
+        opacity={1}
+      />
     </footer>
   );
 };
