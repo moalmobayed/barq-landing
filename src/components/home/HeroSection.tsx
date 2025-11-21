@@ -172,8 +172,9 @@ const HeroSection: React.FC = () => {
           <Image
             src={heroPhone}
             alt="Barq App Interface"
-            width={600}
-            height={1200}
+            width={400}
+            height={840}
+            quality={85}
             className="relative z-10 h-auto w-full max-w-[300px]"
             priority
           />

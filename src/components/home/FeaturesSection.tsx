@@ -53,8 +53,9 @@ const FeaturesSection: React.FC = () => {
             <Image
               src={restaurantManagementOffer}
               alt="Special Offer Dashboard"
-              width={300}
-              height={200}
+              width={200}
+              height={133}
+              quality={80}
               className="h-auto w-full"
             />
           </div>

@@ -68,8 +68,9 @@ const TrustedRestaurantsSection: React.FC = () => {
                 <Image
                   src={restaurant.logo || "/images/logo/barq-logo.png"}
                   alt={restaurant.alt}
-                  width={200}
-                  height={80}
+                  width={120}
+                  height={48}
+                  quality={80}
                   className="h-auto w-full max-w-[150px] object-contain transition-all duration-300 hover:scale-110 sm:max-w-40"
                 />
               </div>

@@ -58,6 +58,8 @@ const Navbar: React.FC = () => {
                 src="/images/logo/barq-logo.png"
                 alt="Barq Logo"
                 fill
+                sizes="(max-width: 768px) 80px, 96px"
+                quality={90}
                 className="object-contain"
                 priority
               />

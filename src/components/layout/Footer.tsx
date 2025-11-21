@@ -56,8 +56,9 @@ const Footer: React.FC = () => {
               <Image
                 src="/images/logo/barq-logo.png"
                 alt="Barq Logo"
-                width={120}
-                height={48}
+                width={80}
+                height={32}
+                quality={90}
                 className="h-24 w-auto"
               />
             </Link>
@@ -183,6 +184,7 @@ const Footer: React.FC = () => {
               />
               <button
                 type="submit"
+                aria-label="Subscribe to newsletter"
                 className="bg-brand-orange hover:bg-brand-orange absolute top-1.5 right-1.5 flex h-9 w-9 items-center justify-center rounded-lg transition-all"
               >
                 <FaPaperPlane className="h-4 w-4 text-white" />

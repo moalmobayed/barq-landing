@@ -6,16 +6,19 @@ import type { Metadata } from "next";
 const lexend = Lexend({
   subsets: ["latin"],
   variable: "--font-lexend",
+  display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -94,6 +97,12 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#fb5a29" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
         className={`${lexend.variable} ${inter.variable} ${manrope.variable} font-manrope bg-[#FFCE000D]`}
