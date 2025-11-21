@@ -21,14 +21,30 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
-      <HeroSection />
-      <StatsSection />
-      <TrustedRestaurantsSection />
-      <FeaturesSection />
-      <HowItWorksSection />
+      <div id="home">
+        <HeroSection />
+      </div>
+
+      <div id="about">
+        <StatsSection />
+        <TrustedRestaurantsSection />
+      </div>
+
+      <div id="features">
+        <FeaturesSection />
+      </div>
+
+      <div id="how-it-works">
+        <HowItWorksSection />
+      </div>
+
       <DishesSection />
       <RegisterRestaurantSection />
-      <WhyChooseUsSection />
+
+      <div id="why-us">
+        <WhyChooseUsSection />
+      </div>
+
       <DownloadAppSection />
       <TestimonialsSection />
       <SupportSection />

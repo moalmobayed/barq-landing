@@ -20,11 +20,11 @@ const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
 
   const quickLinks = [
-    { label: "Home", href: "/" },
-    { label: "About us", href: "/about" },
-    { label: "Features", href: "/#features" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact us", href: "/contact" },
+    { label: "Home", href: "#home" },
+    { label: "About us", href: "#about" },
+    { label: "Features", href: "#features" },
+    { label: "Blog", href: "#how-it-works" },
+    { label: "Contact us", href: "#why-us" },
   ];
 
   const socialLinks = [

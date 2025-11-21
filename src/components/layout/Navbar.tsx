@@ -25,14 +25,12 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Features", href: "/features" },
-    { name: "How it work", href: "/how-it-work" },
-    { name: "Why Us", href: "/why-us" },
+    { name: "Home", href: "#home" },
+    { name: "About Us", href: "#about" },
+    { name: "Features", href: "#features" },
+    { name: "How it work", href: "#how-it-works" },
+    { name: "Why Us", href: "#why-us" },
   ];
-
-  const isActive = (href: string) => pathname === href;
   const isPartnersActive = pathname.startsWith("/partners");
 
   return (
@@ -70,17 +68,13 @@ const Navbar: React.FC = () => {
         {/* Desktop Navigation Links */}
         <div className="hidden items-center gap-6 lg:flex xl:gap-8">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
-              className={`hover:text-brand-orange text-sm font-medium transition-colors ${
-                isActive(link.href)
-                  ? "text-brand-orange font-semibold"
-                  : "text-brand-blue"
-              }`}
+              className="hover:text-brand-orange text-brand-blue text-sm font-medium transition-colors"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
 
           {/* Partners Dropdown */}
@@ -112,14 +106,14 @@ const Navbar: React.FC = () => {
             {isPartnersOpen && (
               <div className="absolute top-full left-0 z-50 mt-2 w-48 rounded-lg bg-white py-2 shadow-lg">
                 <Link
-                  href="/partners/drivers"
+                  href="#"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                   onClick={() => setIsPartnersOpen(false)}
                 >
                   Drivers
                 </Link>
                 <Link
-                  href="/partners/merchants"
+                  href="#"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                   onClick={() => setIsPartnersOpen(false)}
                 >
@@ -183,18 +177,14 @@ const Navbar: React.FC = () => {
         <div className="border-t border-gray-200 bg-white lg:hidden">
           <div className="space-y-1 px-4 pt-2 pb-3">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                className={`hover:text-brand-orange block rounded-lg px-3 py-2 text-base font-medium hover:bg-gray-50 ${
-                  isActive(link.href)
-                    ? "text-brand-orange bg-orange-50 font-semibold"
-                    : "text-gray-700"
-                }`}
+                className="hover:text-brand-orange block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
 
             {/* Mobile Partners Section */}
