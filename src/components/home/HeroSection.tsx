@@ -187,7 +187,6 @@ const HeroSection: React.FC = () => {
         alt="Delicious Burger"
         fill
         className="pointer-events-none absolute top-0 right-0 bottom-0 hidden h-full w-[400px] object-contain object-right lg:block xl:w-[600px] 2xl:w-[800px]"
-        priority
       />
     </section>
   );
