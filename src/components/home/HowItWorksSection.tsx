@@ -76,7 +76,7 @@ const HowItWorksSection: React.FC = () => {
                     />
                   </div>
 
-                  <h4 className="mb-3 text-xl font-bold">{step.title}</h4>
+                  <p className="mb-3 text-xl font-bold">{step.title}</p>
                   <p className="leading-relaxed text-white/80">
                     {step.description}
                   </p>
