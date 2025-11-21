@@ -51,7 +51,7 @@ const DishesSection: React.FC = () => {
             key={dish.id}
             className="group relative overflow-hidden rounded-3xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
           >
-            <div className="aspect-[4/3] overflow-hidden">
+            <div className="aspect-4/3 overflow-hidden">
               <Image
                 src={dish.src}
                 alt={dish.alt}
