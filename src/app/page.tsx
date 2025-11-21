@@ -9,6 +9,8 @@ import RegisterRestaurantSection from "@/components/home/RegisterRestaurantSecti
 import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
 import DownloadAppSection from "@/components/home/DownloadAppSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import SupportSection from "@/components/home/SupportSection";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Barq - Fast and Reliable Delivery Services",
@@ -29,6 +31,8 @@ export default function HomePage() {
       <WhyChooseUsSection />
       <DownloadAppSection />
       <TestimonialsSection />
+      <SupportSection />
+      <Footer />
     </main>
   );
 }
