@@ -112,9 +112,9 @@ const DownloadAppSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
         <SectionBadge text="DOWNLOAD" />
 
-        <h2 className="font-lexend my-4 text-3xl leading-tight font-semibold text-white sm:text-4xl md:text-5xl">
+        <h1 className="font-lexend my-4 text-3xl leading-tight font-semibold text-white sm:text-4xl md:text-5xl">
           Download app to enjoy 4500+ foods from 1200+ restaurants
-        </h2>
+        </h1>
 
         <p className="mb-10 max-w-[550px] justify-self-center text-base text-gray-300 sm:text-lg">
           Download our app to your phone from the stores and start enjoying a
