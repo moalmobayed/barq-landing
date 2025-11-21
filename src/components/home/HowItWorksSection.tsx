@@ -152,9 +152,9 @@ const HowItWorksSection: React.FC = () => {
         <Image
           src={phoneMockup}
           alt="App phone mockup"
-          width={540}
-          height={420}
-          className="-rotate-90"
+          width={420}
+          height={540}
+          className="-rotate-90 object-contain"
           priority
         />
       </div>

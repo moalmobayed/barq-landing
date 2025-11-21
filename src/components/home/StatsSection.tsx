@@ -40,9 +40,9 @@ const StatsSection: React.FC = () => {
               <Image
                 src={stat.icon}
                 alt={stat.label}
-                width={32}
-                height={32}
-                className="size-12 justify-self-end sm:size-14 md:size-16"
+                width={64}
+                height={57}
+                className="justify-self-end object-contain"
               />
 
               {/* Number */}
