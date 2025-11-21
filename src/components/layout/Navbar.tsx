@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Contact Button */}
         <div className="hidden lg:block">
           <Link
-            href="/contact"
+            href="#why-us"
             className="bg-brand-orange rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 xl:px-6 xl:py-3"
           >
             Contact US
@@ -244,7 +244,7 @@ const Navbar: React.FC = () => {
             {/* Mobile Contact Button */}
             <div className="pt-2">
               <Link
-                href="/contact"
+                href="#why-us"
                 className="bg-brand-orange block rounded-lg px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-orange-600"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
