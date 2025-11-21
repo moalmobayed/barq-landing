@@ -77,13 +77,85 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Right Content - Main Phone */}
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative flex w-fit justify-self-center lg:justify-self-end">
+          {/* 30 min delivery - Top Left */}
+          <div className="absolute top-32 -left-16 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block">
+            <div className="mb-1 flex size-10 items-center justify-center rounded-full bg-[#010949]">
+              <svg
+                className="size-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <p className="font-lexend text-center font-semibold">
+              30 min delivery
+            </p>
+          </div>
+
+          {/* Track live map - Top Right */}
+          <div className="absolute top-20 right-32 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block xl:-right-18">
+            <svg
+              className="mb-1 size-10 text-[#010949]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+              />
+            </svg>
+            <p className="font-lexend text-center font-semibold">
+              Track live map
+            </p>
+          </div>
+
+          {/* Quality badge - Bottom Right */}
+          <div className="absolute right-32 bottom-16 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block xl:-right-12">
+            <svg
+              className="mb-1 size-10 text-[#010949]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              />
+            </svg>
+            <p className="font-lexend text-center font-semibold">
+              Track live map
+            </p>
+          </div>
+
+          {/* Location pin with dotted line - Bottom Left */}
+          <Image
+            src="/icons/location.png"
+            alt="Location"
+            width={32}
+            height={32}
+            quality={100}
+            className="absolute bottom-0 -left-12 z-20 hidden w-24 lg:block"
+          />
+
           <Image
             src={heroPhone}
             alt="Barq App Interface"
             width={600}
             height={1200}
-            className="relative z-10 h-auto w-full max-w-[300px] sm:max-w-sm xl:max-w-md"
+            className="relative z-10 h-auto w-full max-w-[300px]"
             priority
           />
         </div>
