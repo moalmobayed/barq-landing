@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import heroBurger from "../../images/hero/hero-burger.png";
 import heroPhone from "../../images/hero/hero-phone.png";
+import TextType from "./TextType";
 
 const HeroSection: React.FC = () => {
   return (
@@ -11,7 +12,25 @@ const HeroSection: React.FC = () => {
         {/* Left Content */}
         <div className="space-y-4 text-center sm:space-y-6 lg:space-y-8 lg:text-left">
           <h1 className="font-lexend text-brand-blue text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-            Fast & best <span className="text-brand-orange">food delivery</span>{" "}
+            The Fastest & best{" "}
+            <TextType
+              text={[
+                "food delivery",
+                "grocery shopping",
+                "package delivery",
+                "courier services",
+                "pharmacy delivery",
+                "restaurant orders",
+                "fresh produce",
+                "express shipping",
+                "meal delivery",
+                "home essentials",
+              ]}
+              typingSpeed={150}
+              pauseDuration={1500}
+              cursorCharacter="|"
+              className="text-brand-orange"
+            />{" "}
             services
             <br />
             in your town
