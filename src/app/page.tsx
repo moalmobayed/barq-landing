@@ -1,48 +1,22 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import HeroSection from "@/components/home/HeroSection";
 import StatsSection from "@/components/home/StatsSection";
+import TrustedRestaurantsSection from "@/components/home/TrustedRestaurantsSection";
+import FeaturesSection from "@/components/home/FeaturesSection";
+import { Metadata } from "next";
+import HowItWorksSection from "@/components/home/HowItWorksSection";
+import DishesSection from "@/components/home/DishesSection";
+import RegisterRestaurantSection from "@/components/home/RegisterRestaurantSection";
+import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
+import DownloadAppSection from "@/components/home/DownloadAppSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import SupportSection from "@/components/home/SupportSection";
+import Footer from "@/components/layout/Footer";
 
-// Lazy load below-the-fold sections
-const TrustedRestaurantsSection = dynamic(
-  () => import("@/components/home/TrustedRestaurantsSection"),
-  { ssr: true },
-);
-const FeaturesSection = dynamic(
-  () => import("@/components/home/FeaturesSection"),
-  { ssr: true },
-);
-const HowItWorksSection = dynamic(
-  () => import("@/components/home/HowItWorksSection"),
-  { ssr: true },
-);
-const DishesSection = dynamic(() => import("@/components/home/DishesSection"), {
-  ssr: true,
-});
-const RegisterRestaurantSection = dynamic(
-  () => import("@/components/home/RegisterRestaurantSection"),
-  { ssr: true },
-);
-const WhyChooseUsSection = dynamic(
-  () => import("@/components/home/WhyChooseUsSection"),
-  { ssr: true },
-);
-const DownloadAppSection = dynamic(
-  () => import("@/components/home/DownloadAppSection"),
-  { ssr: true },
-);
-const TestimonialsSection = dynamic(
-  () => import("@/components/home/TestimonialsSection"),
-  { ssr: true },
-);
-const SupportSection = dynamic(
-  () => import("@/components/home/SupportSection"),
-  { ssr: true },
-);
-const Footer = dynamic(() => import("@/components/layout/Footer"), {
-  ssr: true,
-});
+export const metadata: Metadata = {
+  title: "Barq - Fast and Reliable Delivery Services",
+  description:
+    "Experience swift and dependable delivery services with Barq. Sign up now to get started!",
+};
 
 export default function HomePage() {
   return (
