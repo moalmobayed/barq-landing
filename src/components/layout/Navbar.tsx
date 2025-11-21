@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -8,7 +8,21 @@ import { usePathname } from "next/navigation";
 const Navbar: React.FC = () => {
   const [isPartnersOpen, setIsPartnersOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -22,12 +36,26 @@ const Navbar: React.FC = () => {
   const isPartnersActive = pathname.startsWith("/partners");
 
   return (
-    <nav className="font-inter fixed top-0 z-50 w-full backdrop-blur-xs">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
+    <nav
+      className={`font-inter fixed top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled ? "bg-white/10 backdrop-blur-md" : "backdrop-blur-xs"
+      }`}
+    >
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 md:px-6 ${
+          isScrolled ? "py-3" : "py-4"
+        }`}
+      >
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <div className="relative h-10 w-20 md:h-12 md:w-24">
+            <div
+              className={`relative transition-all duration-300 ${
+                isScrolled
+                  ? "h-8 w-16 md:h-10 md:w-20"
+                  : "h-10 w-20 md:h-12 md:w-24"
+              }`}
+            >
               <Image
                 src="/images/logo/barq-logo.png"
                 alt="Barq Logo"
@@ -106,7 +134,7 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="rounded-lg bg-brand-orange px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 xl:px-6 xl:py-3"
+            className="bg-brand-orange rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 xl:px-6 xl:py-3"
           >
             Contact US
           </Link>
@@ -225,7 +253,7 @@ const Navbar: React.FC = () => {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="block rounded-lg bg-brand-orange px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-orange-600"
+                className="bg-brand-orange block rounded-lg px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-orange-600"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact US
