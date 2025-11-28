@@ -20,7 +20,7 @@ const FeaturesSection: React.FC = () => {
   const t = useTranslations("FeaturesSection");
 
   return (
-    <section className="mx-auto max-w-7xl overflow-x-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-24">
+    <section className="mx-auto max-w-7xl overflow-x-hidden px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-24">
       {/* Section Header */}
       <SectionHeader
         badge={t("headerBadge")}
@@ -214,7 +214,9 @@ const FeaturesSection: React.FC = () => {
             <div className="flex size-8 items-center justify-center rounded-sm bg-white sm:size-10">
               <FaRegClock className="size-4 sm:size-5 md:size-6" />
             </div>
-            <div className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-center text-white`}>
+            <div
+              className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-center text-white`}
+            >
               <p>{t("ongoingOrder")}</p>
               <p>
                 <span className="text-base font-bold sm:text-lg md:text-2xl">
