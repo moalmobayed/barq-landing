@@ -4,10 +4,14 @@ import Image from "next/image";
 import heroBurger from "../../images/hero/hero-burger.png";
 import heroPhone from "../../images/hero/hero-phone.png";
 import TextType from "./TextType";
+import { AnimateIcon } from "../animate-ui/icons/icon";
+import { BellRing } from "../animate-ui/icons/bell-ring";
+import { MapPin } from "../animate-ui/icons/map-pin";
+import { BadgeCheck } from "../animate-ui/icons/badge-check";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen content-center bg-linear-to-br from-gray-50 to-white pb-20 md:py-28 lg:h-screen lg:py-0">
+    <section className="relative min-h-screen content-center overflow-x-clip bg-linear-to-br from-gray-50 to-white pb-20 md:py-28 lg:h-screen lg:py-0">
       <div className="mx-auto mt-20 grid max-w-7xl items-center gap-8 px-4 md:mt-24 md:px-6 lg:grid-cols-2 lg:gap-12">
         {/* Left Content */}
         <div className="space-y-4 text-center sm:space-y-6 lg:space-y-8 lg:text-left">
@@ -99,41 +103,29 @@ const HeroSection: React.FC = () => {
         <div className="relative flex w-fit justify-self-center lg:justify-self-end">
           {/* 30 min delivery - Top Left */}
           <div className="absolute top-32 -left-16 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block">
-            <div className="mb-1 flex size-10 items-center justify-center rounded-full bg-[#010949]">
-              <svg
-                className="size-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
+            <AnimateIcon
+              animate
+              loop
+              loopDelay={700}
+              className="mb-1 flex size-9 items-center justify-center rounded-full bg-[#010949] text-base text-white sm:text-lg"
+            >
+              <BellRing className="size-5" />
+            </AnimateIcon>
             <p className="font-lexend text-center font-semibold">
               30 min delivery
             </p>
           </div>
 
           {/* Track live map - Top Right */}
-          <div className="absolute top-20 right-32 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block xl:-right-18">
-            <svg
-              className="mb-1 size-10 text-[#010949]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <div className="absolute top-20 right-32 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:-right-8 lg:block xl:-right-18">
+            <AnimateIcon
+              animate
+              loop
+              loopDelay={700}
+              className="block h-auto justify-items-center text-[#010949]"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-              />
-            </svg>
+              <MapPin />
+            </AnimateIcon>
             <p className="font-lexend text-center font-semibold">
               Track live map
             </p>
@@ -141,19 +133,14 @@ const HeroSection: React.FC = () => {
 
           {/* Quality badge - Bottom Right */}
           <div className="absolute right-32 bottom-16 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block xl:-right-12">
-            <svg
-              className="mb-1 size-10 text-[#010949]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <AnimateIcon
+              animate
+              loop
+              loopDelay={700}
+              className="block h-auto justify-items-center text-[#010949]"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              />
-            </svg>
+              <BadgeCheck />
+            </AnimateIcon>
             <p className="font-lexend text-center font-semibold">
               Track live map
             </p>

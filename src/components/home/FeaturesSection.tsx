@@ -10,6 +10,9 @@ import restaurantManagement from "../../images/features/restaurant-management.pn
 import customerOrdering from "../../images/features/customer-ordering.png";
 import restaurantManagementOffer from "../../images/features/restaurant-management-offer.png";
 import { FaRegClock } from "react-icons/fa";
+import { CircleCheckBig } from "../animate-ui/icons/circle-check-big";
+import { AnimateIcon } from "../animate-ui/icons/icon";
+import { CheckCheck } from "../animate-ui/icons/check-check";
 
 const FeaturesSection: React.FC = () => {
   return (
@@ -38,10 +41,15 @@ const FeaturesSection: React.FC = () => {
           {/* Overlay 1 - Text Card */}
           <div className="absolute top-8 right-2 flex flex-col items-center gap-1 rounded-2xl border border-[#FB5B2933] bg-white px-3 py-2 shadow-lg sm:top-12 sm:right-4 sm:gap-2 sm:rounded-3xl sm:px-4 sm:py-3 md:top-16 md:right-6 md:px-5 lg:-right-12">
             <div className="bg-brand-blue flex size-8 items-center justify-center rounded-full sm:size-10 md:size-12">
-              <FiCheck
+              <AnimateIcon
+                animate
+                animation="path-loop"
+                loop
+                loopDelay={1000}
                 className="text-base text-white sm:text-lg md:text-xl"
-                strokeWidth={4}
-              />
+              >
+                <CircleCheckBig animation="path-loop" />
+              </AnimateIcon>
             </div>
             <p className="font-lexend text-center text-xs font-semibold sm:text-sm md:text-base">
               Received <br /> new order
@@ -198,10 +206,14 @@ const FeaturesSection: React.FC = () => {
           {/* Overlay 1 - Order Confirmation Card */}
           <div className="font-lexend absolute top-16 right-2 flex items-center gap-2 rounded-xl border border-[#FB5B2933] bg-white px-3 py-2 shadow-lg sm:top-20 sm:right-4 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3 md:top-28 md:-right-4 md:px-6 md:py-4 lg:-right-24">
             <div className="bg-brand-blue flex size-8 shrink-0 items-center justify-center rounded-full sm:size-10 md:size-12">
-              <FiCheck
+              <AnimateIcon
+                animate
+                loop
+                loopDelay={700}
                 className="text-base text-white sm:text-lg md:text-xl"
-                strokeWidth={4}
-              />
+              >
+                <CheckCheck />
+              </AnimateIcon>
             </div>
             <div>
               <p className="text-xs font-semibold text-gray-800 sm:text-sm md:text-base">
