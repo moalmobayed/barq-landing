@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
           <h1
             className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-brand-blue text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl`}
           >
-            {t("titlePrefix")}{" "}
+            {t("titlePrefix")} <br />
             <TextType
               text={t.raw("typingText") as string[]}
               typingSpeed={150}
@@ -103,7 +103,7 @@ const HeroSection: React.FC = () => {
               animate
               loop
               loopDelay={700}
-              className="mb-1 flex size-9 items-center justify-center rounded-full bg-[#010949] text-base text-white sm:text-lg"
+              className="mb-1 flex size-9 items-center justify-center rounded-full bg-brand-blue text-base text-white sm:text-lg"
             >
               <BellRing className="size-5" />
             </AnimateIcon>
@@ -120,7 +120,7 @@ const HeroSection: React.FC = () => {
               animate
               loop
               loopDelay={700}
-              className="block h-auto justify-items-center text-[#010949]"
+              className="block h-auto justify-items-center text-brand-blue"
             >
               <MapPin />
             </AnimateIcon>
@@ -137,7 +137,7 @@ const HeroSection: React.FC = () => {
               animate
               loop
               loopDelay={700}
-              className="block h-auto justify-items-center text-[#010949]"
+              className="block h-auto justify-items-center text-brand-blue"
             >
               <BadgeCheck />
             </AnimateIcon>
