@@ -23,7 +23,10 @@ const DownloadAppSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative mx-auto max-w-7xl overflow-hidden rounded-4xl bg-black py-16 sm:py-20 md:py-24 lg:my-15 lg:py-28">
+    <section
+      data-aos="fade-up"
+      className="relative mx-auto max-w-7xl overflow-hidden rounded-4xl bg-black py-16 sm:py-20 md:py-24 lg:my-15 lg:py-28"
+    >
       {/* Background Food Images - Left Side Slider (2 columns) */}
       <div className="absolute top-0 left-0 hidden h-full w-1/4 overflow-hidden lg:block">
         <div className="flex gap-4">

@@ -5,7 +5,10 @@ import { FaHeadset } from "react-icons/fa";
 
 const SupportSection: React.FC = () => {
   return (
-    <section className="relative z-10 mx-auto -mb-28 max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 md:pt-24 lg:px-8 lg:pt-28">
+    <section
+      data-aos="fade-up"
+      className="relative z-10 mx-auto -mb-28 max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 md:pt-24 lg:px-8 lg:pt-28"
+    >
       <div className="bg-brand-orange relative overflow-hidden rounded-[40px] px-6 py-12 sm:px-8 sm:py-16 md:px-12 md:py-20 lg:px-16 lg:py-24">
         {/* Decorative Stars */}
         <div className="absolute top-10 right-20 hidden text-white opacity-50 lg:block">

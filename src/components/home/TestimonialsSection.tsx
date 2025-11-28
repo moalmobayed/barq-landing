@@ -47,7 +47,10 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28">
+    <section
+      data-aos="fade-up"
+      className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28"
+    >
       {/* Decorative Thumbs Up */}
       <Image
         src="/icons/like.png"

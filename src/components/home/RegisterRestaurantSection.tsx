@@ -5,7 +5,10 @@ import restaurantBg from "../../images/restaurants/restaurant-bg.jpg";
 
 const RegisterRestaurantSection: React.FC = () => {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-16">
+    <section
+      data-aos="fade-up"
+      className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-16"
+    >
       <div
         className="relative overflow-hidden rounded-[40px] bg-cover bg-center px-6 py-20 sm:px-8 sm:py-24 md:py-28 lg:py-32"
         style={{

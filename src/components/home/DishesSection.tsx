@@ -32,7 +32,10 @@ const DishesSection: React.FC = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28">
+    <section
+      data-aos="fade-up"
+      className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28"
+    >
       <div className="mb-8 space-y-4 text-center sm:mb-12 md:mb-16">
         <SectionBadge text="YUMMY DISHES!" />
         <SectionTitle className="text-[#010949]">

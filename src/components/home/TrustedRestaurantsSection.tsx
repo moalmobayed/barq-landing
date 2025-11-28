@@ -50,7 +50,10 @@ const TrustedRestaurantsSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+    <section
+      data-aos="fade-up"
+      className="relative overflow-hidden bg-white py-12 sm:py-16 md:py-20 lg:py-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <h2 className="font-lexend text-brand-blue mb-8 text-center text-3xl font-bold sm:mb-10 sm:text-3xl">
