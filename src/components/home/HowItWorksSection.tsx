@@ -63,7 +63,7 @@ const HowItWorksSection: React.FC = () => {
             return (
               <div
                 key={step.id}
-                className="group relative rounded-2xl border border-white/40 bg-white/20 p-6 pb-8 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/30 hover:shadow-2xl hover:shadow-orange-500/20 sm:p-8 md:p-10"
+                className="group relative rounded-2xl border border-white/40 bg-white/20 p-6 pb-8 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/30 hover:border-orange-400 hover:shadow-2xl hover:shadow-orange-500/20 sm:p-8 md:p-10"
               >
                 <div className="bg-brand-orange absolute top-0 left-0 rounded-tl-2xl rounded-br-3xl px-4 py-2 text-xl font-bold transition-all duration-300 group-hover:bg-orange-600">
                   {step.number}
