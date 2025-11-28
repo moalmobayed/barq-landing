@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-100 transition-colors hover:text-white"
+                    className="text-sm text-gray-100 transition-colors hover:text-brand-orange"
                   >
                     {link.label}
                   </Link>
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t("emailPlaceholder")}
                 required
-                className="h-12 w-full rounded-xl border border-white/40 bg-transparent px-4 pe-14 text-sm text-white placeholder-gray-500 focus:border-orange-500 focus:outline-none"
+                className="h-12 w-full rounded-xl border border-white/40 bg-transparent px-4 pe-14 text-sm text-white placeholder-white/50 focus:border-orange-500 focus:outline-none"
               />
               <button
                 type="submit"
