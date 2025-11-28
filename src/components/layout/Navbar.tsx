@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
           {/* Language Switcher - Desktop */}
           <button
             onClick={handleLanguageSwitch}
-            className="hover:text-brand-orange text-brand-blue flex items-center gap-2 text-sm font-medium transition-colors"
+            className={`text-brand-orange flex items-center gap-2 text-sm font-medium transition-colors ${locale === "en" && "font-cairo"}`}
           >
             <Globe className="h-4 w-4" />
             {locale === "en" ? "العربية" : "English"}
@@ -270,7 +270,7 @@ const Navbar: React.FC = () => {
                 handleLanguageSwitch();
                 setIsMobileMenuOpen(false);
               }}
-              className="hover:text-brand-orange flex w-full items-center gap-2 rounded-lg px-3 py-2 text-start text-base font-medium text-gray-700 hover:bg-gray-50"
+              className={`text-brand-orange flex w-full items-center gap-2 rounded-lg px-3 py-2 text-start text-base justify-center font-medium hover:bg-gray-50 ${locale === "en" && "font-cairo"}`}
             >
               <Globe className="h-4 w-4" />
               {locale === "en" ? "العربية" : "English"}
