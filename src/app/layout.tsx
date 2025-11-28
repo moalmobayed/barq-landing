@@ -1,6 +1,7 @@
 import { Lexend, Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import AOSInit from "@/components/AOSInit";
 import type { Metadata } from "next";
 
 const lexend = Lexend({
@@ -107,6 +108,7 @@ export default function RootLayout({
       <body
         className={`${lexend.variable} ${inter.variable} ${manrope.variable} font-manrope bg-[#FFCE000D]`}
       >
+        <AOSInit />
         <Navbar />
         {children}
       </body>
