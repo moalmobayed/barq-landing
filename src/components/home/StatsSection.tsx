@@ -43,7 +43,7 @@ const StatsSection: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-xl border border-white/40 bg-white/20 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-white/30 sm:rounded-2xl sm:p-8"
+              className="group relative overflow-hidden rounded-xl border border-white/40 bg-white/20 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-orange-400 hover:bg-white/30 sm:rounded-2xl sm:p-8"
             >
               {/* Icon */}
               <Image
