@@ -13,14 +13,18 @@ import { FaRegClock } from "react-icons/fa";
 import { CircleCheckBig } from "../animate-ui/icons/circle-check-big";
 import { AnimateIcon } from "../animate-ui/icons/icon";
 import { CheckCheck } from "../animate-ui/icons/check-check";
+import { useLocale, useTranslations } from "next-intl";
 
 const FeaturesSection: React.FC = () => {
+  const locale = useLocale();
+  const t = useTranslations("FeaturesSection");
+
   return (
     <section className="mx-auto max-w-7xl overflow-x-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-24">
       {/* Section Header */}
       <SectionHeader
-        badge="ADVANCED FEATURES"
-        title="Win-win for restaurants & users"
+        badge={t("headerBadge")}
+        title={t("headerTitle")}
         className="mb-8 sm:mb-12 md:mb-16"
       />
 
@@ -51,8 +55,12 @@ const FeaturesSection: React.FC = () => {
                 <CircleCheckBig animation="path-loop" />
               </AnimateIcon>
             </div>
-            <p className="font-lexend text-center text-xs font-semibold sm:text-sm md:text-base">
-              Received <br /> new order
+            <p
+              className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-center text-xs font-semibold sm:text-sm md:text-base`}
+            >
+              {t.rich("newOrder", {
+                br: () => <br />,
+              })}
             </p>
           </div>
 
@@ -71,18 +79,13 @@ const FeaturesSection: React.FC = () => {
 
         {/* Content */}
         <div className="space-y-4">
-          <SectionBadge text="FOR RESTAURANT" />
+          <SectionBadge text={t("restaurantBadge")} />
 
           <SectionTitle as="h3" className="text-2xl! sm:text-3xl! md:text-4xl!">
-            Effortless management of restaurant operations.
+            {t("restaurantTitle")}
           </SectionTitle>
 
-          <SectionDescription>
-            Our system provides you with a centralized dashboard for full
-            control over workflow, from receiving orders to generating financial
-            reports, allowing you to focus on your food quality and customer
-            service.
-          </SectionDescription>
+          <SectionDescription>{t("restaurantDescription")}</SectionDescription>
 
           <div className="space-y-4">
             {/* Feature 1 */}
@@ -95,13 +98,9 @@ const FeaturesSection: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-base font-bold sm:text-lg">
-                  Handling of orders
+                  {t("restaurantFeature1Title")}
                 </h4>
-                <p>
-                  Orders are instantly and accurately routed to the kitchen or
-                  delivery department, significantly reducing waiting time and
-                  boosting customer satisfaction.
-                </p>
+                <p>{t("restaurantFeature1Desc")}</p>
               </div>
             </div>
 
@@ -115,18 +114,14 @@ const FeaturesSection: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-base font-bold sm:text-lg">
-                  Sale system connectivity
+                  {t("restaurantFeature2Title")}
                 </h4>
-                <p>
-                  Connect your ordering app directly to your Point of Sale (POS)
-                  system. Log all sales, track inventory, and issue accurate
-                  invoices, all from one unified platform.
-                </p>
+                <p>{t("restaurantFeature2Desc")}</p>
               </div>
             </div>
           </div>
 
-          <Button href="/register-restaurant">Register Your Restaurant</Button>
+          <Button href="/register-restaurant">{t("registerButton")}</Button>
         </div>
       </div>
 
@@ -134,18 +129,13 @@ const FeaturesSection: React.FC = () => {
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         {/* Content */}
         <div className="space-y-4 lg:order-1">
-          <SectionBadge text="FOR CUSTOMER" />
+          <SectionBadge text={t("customerBadge")} />
 
           <SectionTitle as="h3" className="text-2xl! sm:text-3xl! md:text-4xl!">
-            Seamless ordering process from app
+            {t("customerTitle")}
           </SectionTitle>
 
-          <SectionDescription>
-            Order your favorite meal or products with ultimate ease and speed!
-            Our app is designed to provide an intuitive and rapid user
-            experience, from selecting the item to completing the payment in
-            simple, comfortable steps.
-          </SectionDescription>
+          <SectionDescription>{t("customerDescription")}</SectionDescription>
 
           <div className="space-y-4">
             {/* Feature 1 */}
@@ -158,13 +148,9 @@ const FeaturesSection: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-base font-bold sm:text-lg">
-                  Delivery within 3 min
+                  {t("customerFeature1Title")}
                 </h4>
-                <p>
-                  The fastest delivery in the city! Rely on our smart fleet to
-                  ensure your order arrives fresh and on time, so you can enjoy
-                  your product without the wait.
-                </p>
+                <p>{t("customerFeature1Desc")}</p>
               </div>
             </div>
 
@@ -178,18 +164,14 @@ const FeaturesSection: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-base font-bold sm:text-lg">
-                  Live map tracking
+                  {t("customerFeature2Title")}
                 </h4>
-                <p>
-                  Follow your order step-by-step in real-time. Watch the
-                  delivery agent&apos;s location directly on the map and
-                  accurately predict the arrival time for total peace of mind.
-                </p>
+                <p>{t("customerFeature2Desc")}</p>
               </div>
             </div>
           </div>
 
-          <Button href="#">Download App</Button>
+          <Button href="#">{t("downloadButton")}</Button>
         </div>
 
         {/* Image with Overlays */}
@@ -204,7 +186,9 @@ const FeaturesSection: React.FC = () => {
           />
 
           {/* Overlay 1 - Order Confirmation Card */}
-          <div className="font-lexend absolute top-16 right-2 flex items-center gap-2 rounded-xl border border-[#FB5B2933] bg-white px-3 py-2 shadow-lg sm:top-20 sm:right-4 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3 md:top-28 md:-right-4 md:px-6 md:py-4 lg:-right-24">
+          <div
+            className={`${locale === "ar" ? "font-cairo" : "font-lexend"} absolute end-2 top-16 flex items-center gap-2 rounded-xl border border-[#FB5B2933] bg-white px-3 py-2 shadow-lg sm:end-4 sm:top-20 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3 md:-end-4 md:top-28 md:px-6 md:py-4 lg:-end-24`}
+          >
             <div className="bg-brand-blue flex size-8 shrink-0 items-center justify-center rounded-full sm:size-10 md:size-12">
               <AnimateIcon
                 animate
@@ -217,7 +201,7 @@ const FeaturesSection: React.FC = () => {
             </div>
             <div>
               <p className="text-xs font-semibold text-gray-800 sm:text-sm md:text-base">
-                Your order has confirmed
+                {t("orderConfirmed")}
               </p>
               <p className="text-[10px] text-gray-600 sm:text-xs md:text-sm">
                 02:00 pm - June 17, 2025
@@ -226,19 +210,19 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Overlay 2 - Delivery Status Card */}
-          <div className="bg-brand-blue absolute -right-2 bottom-12 flex flex-col items-center gap-2 rounded-3xl px-3 py-2 shadow-xl sm:-right-4 sm:bottom-16 sm:gap-3 sm:px-4 sm:py-3 md:bottom-20 md:px-6 md:py-4 lg:-right-16">
+          <div className="bg-brand-blue absolute -end-2 bottom-12 flex flex-col items-center gap-2 rounded-3xl px-3 py-2 shadow-xl sm:-end-4 sm:bottom-16 sm:gap-3 sm:px-4 sm:py-3 md:bottom-20 md:px-6 md:py-4 lg:-end-16">
             <div className="flex size-8 items-center justify-center rounded-sm bg-white sm:size-10">
               <FaRegClock className="size-4 sm:size-5 md:size-6" />
             </div>
-            <div className="font-lexend text-center text-white">
-              <p>Ongoing Order</p>
+            <div className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-center text-white`}>
+              <p>{t("ongoingOrder")}</p>
               <p>
                 <span className="text-base font-bold sm:text-lg md:text-2xl">
                   45
                 </span>{" "}
                 mins
               </p>
-              <p>Estimated Delivery</p>
+              <p>{t("estimatedDelivery")}</p>
             </div>
           </div>
         </div>

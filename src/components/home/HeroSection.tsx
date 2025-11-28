@@ -8,41 +8,37 @@ import { AnimateIcon } from "../animate-ui/icons/icon";
 import { BellRing } from "../animate-ui/icons/bell-ring";
 import { MapPin } from "../animate-ui/icons/map-pin";
 import { BadgeCheck } from "../animate-ui/icons/badge-check";
+import { useLocale, useTranslations } from "next-intl";
 
 const HeroSection: React.FC = () => {
+  const locale = useLocale();
+  const t = useTranslations("HeroSection");
+
   return (
     <section className="relative min-h-screen content-center overflow-x-clip bg-linear-to-br from-gray-50 to-white pb-20 md:py-28 lg:h-screen lg:py-0">
       <div className="mx-auto mt-20 grid max-w-7xl items-center gap-8 px-4 md:mt-24 md:px-6 lg:grid-cols-2 lg:gap-12">
         {/* Left Content */}
-        <div className="space-y-4 text-center sm:space-y-6 lg:space-y-8 lg:text-left">
-          <h1 className="font-lexend text-brand-blue text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-            The Fastest & best{" "}
+        <div className="space-y-4 text-center sm:space-y-6 lg:space-y-8 lg:text-start">
+          <h1
+            className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-brand-blue text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl`}
+          >
+            {t("titlePrefix")}{" "}
             <TextType
-              text={[
-                "food delivery",
-                "grocery shopping",
-                "package delivery",
-                "courier services",
-                "pharmacy delivery",
-                "restaurant orders",
-                "fresh produce",
-                "express shipping",
-                "meal delivery",
-                "home essentials",
-              ]}
+              text={t.raw("typingText") as string[]}
               typingSpeed={150}
               pauseDuration={1500}
               cursorCharacter="|"
               className="text-brand-orange"
             />{" "}
-            services
+            {t("titleSuffix")}
             <br />
-            in your town
+            {t("inYourTown")}
           </h1>
 
-          <p className="font-inter text-sm text-gray-600 sm:text-base md:text-lg">
-            We commit to delivering your food to you within 30 minutes. if we
-            would fail, we will give the food free.
+          <p
+            className={`${locale === "ar" ? "font-cairo" : "font-inter"} text-sm text-gray-600 sm:text-base md:text-lg`}
+          >
+            {t("description")}
           </p>
 
           {/* App Store Buttons */}
@@ -61,12 +57,12 @@ const HeroSection: React.FC = () => {
                 >
                   <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                 </svg>
-                <div className="text-left">
+                <div className="text-start">
                   <div className="text-[10px] font-semibold text-white sm:text-xs">
-                    GET IT ON
+                    {t("getItOn")}
                   </div>
                   <div className="text-base font-semibold text-white sm:text-lg">
-                    Google Play
+                    {t("googlePlay")}
                   </div>
                 </div>
               </div>
@@ -86,12 +82,12 @@ const HeroSection: React.FC = () => {
                 >
                   <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
                 </svg>
-                <div className="text-left">
+                <div className="text-start">
                   <div className="text-[10px] font-semibold text-white sm:text-xs">
-                    Download on the
+                    {t("downloadOn")}
                   </div>
                   <div className="text-base font-semibold text-white sm:text-lg">
-                    App Store
+                    {t("appStore")}
                   </div>
                 </div>
               </div>
@@ -102,7 +98,7 @@ const HeroSection: React.FC = () => {
         {/* Right Content - Main Phone */}
         <div className="relative flex w-fit justify-self-center lg:justify-self-end">
           {/* 30 min delivery - Top Left */}
-          <div className="absolute top-32 -left-16 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block">
+          <div className="absolute -start-16 top-32 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block">
             <AnimateIcon
               animate
               loop
@@ -111,13 +107,15 @@ const HeroSection: React.FC = () => {
             >
               <BellRing className="size-5" />
             </AnimateIcon>
-            <p className="font-lexend text-center font-semibold">
-              30 min delivery
+            <p
+              className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-center font-semibold`}
+            >
+              {t("delivery30Min")}
             </p>
           </div>
 
           {/* Track live map - Top Right */}
-          <div className="absolute top-20 right-32 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:-right-8 lg:block xl:-right-18">
+          <div className="absolute end-32 top-20 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:-end-8 lg:block xl:-end-18">
             <AnimateIcon
               animate
               loop
@@ -126,13 +124,15 @@ const HeroSection: React.FC = () => {
             >
               <MapPin />
             </AnimateIcon>
-            <p className="font-lexend text-center font-semibold">
-              Track live map
+            <p
+              className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-center font-semibold`}
+            >
+              {t("trackLiveMap")}
             </p>
           </div>
 
           {/* Quality badge - Bottom Right */}
-          <div className="absolute right-32 bottom-16 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block xl:-right-12">
+          <div className="absolute end-32 bottom-16 z-20 hidden max-w-29 justify-items-center rounded-4xl border-2 border-pink-100 bg-white p-5 shadow-lg lg:block xl:-end-12">
             <AnimateIcon
               animate
               loop
@@ -141,8 +141,10 @@ const HeroSection: React.FC = () => {
             >
               <BadgeCheck />
             </AnimateIcon>
-            <p className="font-lexend text-center font-semibold">
-              Track live map
+            <p
+              className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-center font-semibold`}
+            >
+              {t("trackLiveMap")}
             </p>
           </div>
 
@@ -153,7 +155,7 @@ const HeroSection: React.FC = () => {
             width={32}
             height={32}
             quality={100}
-            className="absolute bottom-0 -left-12 z-20 hidden w-24 lg:block"
+            className="absolute -start-12 bottom-0 z-20 hidden w-24 lg:block"
           />
 
           <Image
@@ -173,7 +175,7 @@ const HeroSection: React.FC = () => {
         src={heroBurger}
         alt="Delicious Burger"
         fill
-        className="pointer-events-none absolute top-0 right-0 bottom-0 hidden h-full w-[400px] object-contain object-right lg:block xl:w-[600px] 2xl:w-[800px]"
+        className={`pointer-events-none absolute end-0 top-0 bottom-0 hidden h-full w-[400px] object-contain object-right lg:block xl:w-[600px] 2xl:w-[800px] ${locale === "ar" ? "scale-x-[-1]" : ""}`}
       />
     </section>
   );

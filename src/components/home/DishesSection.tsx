@@ -6,8 +6,10 @@ import dishOne from "../../images/dishes/dish-1.png";
 import dishTwo from "../../images/dishes/dish-2.png";
 import dishThree from "../../images/dishes/dish-3.png";
 import dishFour from "../../images/dishes/dish-4.png";
+import { useTranslations } from "next-intl";
 
 const DishesSection: React.FC = () => {
+  const t = useTranslations("DishesSection");
   const dishes = [
     {
       id: 1,
@@ -37,13 +39,10 @@ const DishesSection: React.FC = () => {
       className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28"
     >
       <div className="mb-8 space-y-4 text-center sm:mb-12 md:mb-16">
-        <SectionBadge text="YUMMY DISHES!" />
-        <SectionTitle className="text-[#010949]">
-          Access Thousands of Dishes with Just a Tap
-        </SectionTitle>
+        <SectionBadge text={t("badge")} />
+        <SectionTitle className="text-[#010949]">{t("title")}</SectionTitle>
         <p className="mx-auto max-w-3xl text-base text-gray-600 sm:text-lg">
-          Our system grants you instant access to thousands of dishes and
-          diverse cuisines—all it takes is a single tap on your screen.
+          {t("description")}
         </p>
       </div>
 

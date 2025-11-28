@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaStar, FaQuoteRight } from "react-icons/fa";
 import Button from "../common/Button";
 import SectionHeader from "../common/SectionHeader";
+import { useTranslations } from "next-intl";
 
 interface Testimonial {
   id: string;
@@ -15,37 +16,36 @@ interface Testimonial {
   review: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    id: "1",
-    name: "Sandra Luna",
-    image: "/images/logo/barq-logo.png",
-    rating: 5,
-    title: "Quality and Healthy Food",
-    review:
-      "Simply dummy text of the printing and typesetting indus try lorem ipsum has been the industrys standard.",
-  },
-  {
-    id: "2",
-    name: "Amelia Elisa",
-    image: "/images/logo/barq-logo.png",
-    rating: 5,
-    title: "Easy to use App, Much Helpful!",
-    review:
-      "Indus try lorem ipsum has been the industrys standard dummy textever Print and tysetting.",
-  },
-  {
-    id: "3",
-    name: "Maria Sim",
-    image: "/images/logo/barq-logo.png",
-    rating: 5,
-    title: "Supportive staff!",
-    review:
-      "Lorem ipsum is simply dummy text of the printing and dummy text typesetting industry lorem ipsum has been.",
-  },
-];
-
 const TestimonialsSection: React.FC = () => {
+  const t = useTranslations("TestimonialsSection");
+
+  const testimonials: Testimonial[] = [
+    {
+      id: "1",
+      name: "Sandra Luna",
+      image: "/images/logo/barq-logo.png",
+      rating: 5,
+      title: t("reviews.0.title"),
+      review: t("reviews.0.review"),
+    },
+    {
+      id: "2",
+      name: "Amelia Elisa",
+      image: "/images/logo/barq-logo.png",
+      rating: 5,
+      title: t("reviews.1.title"),
+      review: t("reviews.1.review"),
+    },
+    {
+      id: "3",
+      name: "Maria Sim",
+      image: "/images/logo/barq-logo.png",
+      rating: 5,
+      title: t("reviews.2.title"),
+      review: t("reviews.2.review"),
+    },
+  ];
+
   return (
     <section
       data-aos="fade-up"
@@ -73,9 +73,9 @@ const TestimonialsSection: React.FC = () => {
 
       {/* Header */}
       <SectionHeader
-        badge="TESTIMONIALS"
-        title="Our happy clients"
-        description="See why thousands of users and hundreds of restaurants trust our platform every day. We deliver results you can rely on."
+        badge={t("badge")}
+        title={t("title")}
+        description={t("description")}
         align="center"
         className="mb-8 sm:mb-12 md:mb-16"
       />
@@ -132,7 +132,7 @@ const TestimonialsSection: React.FC = () => {
 
       {/* CTA Button */}
       <div className="mt-10 flex justify-center">
-        <Button>Read More Success Story</Button>
+        <Button>{t("readMoreButton")}</Button>
       </div>
     </section>
   );

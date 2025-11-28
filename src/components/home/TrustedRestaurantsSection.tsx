@@ -10,8 +10,11 @@ import res2 from "../../images/restaurants/res2.png";
 import res3 from "../../images/restaurants/res3.png";
 import res4 from "../../images/restaurants/res4.png";
 import res5 from "../../images/restaurants/res5.png";
+import { useLocale, useTranslations } from "next-intl";
 
 const TrustedRestaurantsSection: React.FC = () => {
+  const locale = useLocale();
+  const t = useTranslations("TrustedRestaurantsSection");
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
@@ -56,8 +59,10 @@ const TrustedRestaurantsSection: React.FC = () => {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <h2 className="font-lexend text-brand-blue mb-8 text-center text-3xl font-bold sm:mb-10 sm:text-3xl">
-          Trusted by <span className="text-brand-blue">2.5k+ restaurant</span>
+        <h2
+          className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-brand-blue mb-8 text-center text-3xl font-bold sm:mb-10 sm:text-3xl`}
+        >
+          {t("title")} <span className="text-brand-blue">{t("trustedBy")}</span>
         </h2>
 
         {/* Restaurant Logos Slider */}
@@ -83,7 +88,7 @@ const TrustedRestaurantsSection: React.FC = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <Button href="/register-restaurant">Register Your Restaurant</Button>
+          <Button href="/register-restaurant">{t("registerButton")}</Button>
         </div>
       </div>
     </section>

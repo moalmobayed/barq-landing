@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 interface ButtonProps {
   href?: string;
@@ -22,8 +23,9 @@ const Button: React.FC<ButtonProps> = ({
   type = "button",
   disabled = false,
 }) => {
-  const baseStyles =
-    "inline-flex items-center justify-center rounded-lg font-manrope font-semibold transition-all duration-300";
+  const locale = useLocale();
+
+  const baseStyles = `inline-flex items-center justify-center rounded-lg ${locale === "ar" ? "font-cairo" : "font-manrope"} font-semibold transition-all duration-300`;
 
   const variantStyles = {
     primary:

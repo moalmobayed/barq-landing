@@ -4,8 +4,11 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 const Navbar: React.FC = () => {
+  const locale = useLocale();
+  const t = useTranslations("Navbar");
   const [isPartnersOpen, setIsPartnersOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,17 +28,17 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Features", href: "#features" },
-    { name: "How it work", href: "#how-it-works" },
-    { name: "Why Us", href: "#why-us" },
+    { name: t("home"), href: "#home" },
+    { name: t("aboutUs"), href: "#about" },
+    { name: t("features"), href: "#features" },
+    { name: t("howItWorks"), href: "#how-it-works" },
+    { name: t("whyUs"), href: "#why-us" },
   ];
   const isPartnersActive = pathname.startsWith("/partners");
 
   return (
     <nav
-      className={`font-inter fixed top-0 z-50 w-full transition-all duration-300 ${
+      className={`${locale === "ar" ? "font-cairo" : "font-inter"} fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled ? "bg-white/10 backdrop-blur-md" : "backdrop-blur-xs"
       }`}
     >
@@ -89,7 +92,7 @@ const Navbar: React.FC = () => {
                   : "text-brand-blue"
               }`}
             >
-              Partners
+              {t("partners")}
               <svg
                 className={`h-4 w-4 transition-transform ${isPartnersOpen ? "rotate-180" : ""}`}
                 fill="none"
@@ -106,20 +109,20 @@ const Navbar: React.FC = () => {
             </button>
 
             {isPartnersOpen && (
-              <div className="absolute top-full left-0 z-50 mt-2 w-48 rounded-lg bg-white py-2 shadow-lg">
+              <div className="absolute start-0 top-full z-50 mt-2 w-48 rounded-lg bg-white py-2 shadow-lg">
                 <Link
                   href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  className="text-brand-blue block px-4 py-2 text-sm hover:bg-gray-50"
                   onClick={() => setIsPartnersOpen(false)}
                 >
-                  Drivers
+                  {t("drivers")}
                 </Link>
                 <Link
                   href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  className="text-brand-blue block px-4 py-2 text-sm hover:bg-gray-50"
                   onClick={() => setIsPartnersOpen(false)}
                 >
-                  Merchants
+                  {t("merchants")}
                 </Link>
               </div>
             )}
@@ -132,7 +135,7 @@ const Navbar: React.FC = () => {
             href="#why-us"
             className="bg-brand-orange rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 xl:px-6 xl:py-3"
           >
-            Contact US
+            {t("contactUs")}
           </Link>
         </div>
 
@@ -199,7 +202,7 @@ const Navbar: React.FC = () => {
                     : "text-gray-700"
                 }`}
               >
-                Partners
+                {t("partners")}
                 <svg
                   className={`h-4 w-4 transition-transform ${isPartnersOpen ? "rotate-180" : ""}`}
                   fill="none"
@@ -216,7 +219,7 @@ const Navbar: React.FC = () => {
               </button>
 
               {isPartnersOpen && (
-                <div className="ml-4 space-y-1">
+                <div className="ms-4 space-y-1">
                   <Link
                     href="/partners/drivers"
                     className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
@@ -225,7 +228,7 @@ const Navbar: React.FC = () => {
                       setIsPartnersOpen(false);
                     }}
                   >
-                    Drivers
+                    {t("drivers")}
                   </Link>
                   <Link
                     href="/partners/merchants"
@@ -235,7 +238,7 @@ const Navbar: React.FC = () => {
                       setIsPartnersOpen(false);
                     }}
                   >
-                    Merchants
+                    {t("merchants")}
                   </Link>
                 </div>
               )}
@@ -248,7 +251,7 @@ const Navbar: React.FC = () => {
                 className="bg-brand-orange block rounded-lg px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-orange-600"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Contact US
+                {t("contactUs")}
               </Link>
             </div>
           </div>

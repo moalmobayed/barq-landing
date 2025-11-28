@@ -5,6 +5,7 @@ import SectionTitle from "../common/SectionTitle";
 import { FiTruck, FiAward, FiMap } from "react-icons/fi";
 import { IconType } from "react-icons";
 import deliveryHero from "../../images/hero/delivery-hero.png";
+import { useTranslations } from "next-intl";
 
 interface Feature {
   id: string;
@@ -13,39 +14,37 @@ interface Feature {
   description: string;
 }
 
-const features: Feature[] = [
-  {
-    id: "1",
-    icon: FiTruck,
-    title: "Delivery in 30 min",
-    description:
-      "Get your favorite meals delivered fresh and fast to your door in just 30 minutes! Enjoy the convenience!",
-  },
-  {
-    id: "2",
-    icon: FiAward,
-    title: "Quality Food",
-    description:
-      "Enjoy premium meals from top local restaurants, expertly crafted to satisfy your taste and elevate your dining experience!",
-  },
-  {
-    id: "3",
-    icon: FiMap,
-    title: "Track Live Map",
-    description:
-      "Easily track your order in real-time with our live map feature, ultimate convenience and keeping you updated every step of the way!",
-  },
-];
-
 const WhyChooseUsSection: React.FC = () => {
+  const t = useTranslations("WhyChooseUsSection");
+
+  const features: Feature[] = [
+    {
+      id: "1",
+      icon: FiTruck,
+      title: t("feature1Title"),
+      description: t("feature1Desc"),
+    },
+    {
+      id: "2",
+      icon: FiAward,
+      title: t("feature2Title"),
+      description: t("feature2Desc"),
+    },
+    {
+      id: "3",
+      icon: FiMap,
+      title: t("feature3Title"),
+      description: t("feature3Desc"),
+    },
+  ];
+
   return (
     <section className="mx-auto max-w-7xl rounded-[40px] border border-[#E3D3CF] bg-white px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28">
       <div className="mb-8 space-y-4 text-center sm:mb-12 md:mb-16">
-        <SectionBadge text="WHY USE BARQ" />
-        <SectionTitle className="text-[#010949]">Why choose us</SectionTitle>
+        <SectionBadge text={t("badge")} />
+        <SectionTitle className="text-[#010949]">{t("title")}</SectionTitle>
         <p className="mx-auto max-w-3xl text-base text-gray-600 sm:text-lg">
-          We are the only platform that truly unites speed, selection, and
-          reliability for both customers and businesses.
+          {t("description")}
         </p>
       </div>
 

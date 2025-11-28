@@ -1,3 +1,4 @@
+import { useLocale } from "next-intl";
 import React from "react";
 
 interface SectionTitleProps {
@@ -11,9 +12,10 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   className = "",
   as: Component = "h2",
 }) => {
+  const locale = useLocale();
   return (
     <Component
-      className={`font-lexend text-brand-blue text-3xl font-bold sm:text-4xl md:text-5xl ${className}`}
+      className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-brand-blue text-3xl font-bold sm:text-4xl md:text-5xl ${className}`}
     >
       {children}
     </Component>

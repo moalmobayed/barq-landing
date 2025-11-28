@@ -2,8 +2,11 @@ import React from "react";
 import Link from "next/link";
 import SectionBadge from "../common/SectionBadge";
 import restaurantBg from "../../images/restaurants/restaurant-bg.jpg";
+import { useLocale, useTranslations } from "next-intl";
 
 const RegisterRestaurantSection: React.FC = () => {
+  const locale = useLocale();
+  const t = useTranslations("RegisterRestaurantSection");
   return (
     <section
       data-aos="fade-up"
@@ -21,17 +24,19 @@ const RegisterRestaurantSection: React.FC = () => {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center">
-          <SectionBadge text="REGISTER RESTAURANT" className="mb-2" />
+          <SectionBadge text={t("badge")} className="mb-2" />
 
-          <h2 className="font-lexend mb-8 max-w-lg text-3xl leading-tight font-semibold text-white sm:text-4xl md:text-5xl">
-            Begin gaining more customers today
+          <h2
+            className={`${locale === "ar" ? "font-cairo" : "font-lexend"} mb-8 max-w-lg text-3xl leading-tight font-semibold text-white sm:text-4xl md:text-5xl`}
+          >
+            {t("title")}
           </h2>
 
           <Link
             href="/register-restaurant"
             className="bg-brand-orange inline-block rounded-xl px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-lg sm:px-10 sm:py-5 sm:text-lg"
           >
-            Register Restaurant
+            {t("button")}
           </Link>
         </div>
       </div>

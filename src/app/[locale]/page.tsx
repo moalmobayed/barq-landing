@@ -2,7 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import StatsSection from "@/components/home/StatsSection";
 import TrustedRestaurantsSection from "@/components/home/TrustedRestaurantsSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
-import { Metadata } from "next";
+
 import HowItWorksSection from "@/components/home/HowItWorksSection";
 import DishesSection from "@/components/home/DishesSection";
 import RegisterRestaurantSection from "@/components/home/RegisterRestaurantSection";
@@ -12,11 +12,21 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import SupportSection from "@/components/home/SupportSection";
 import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = {
-  title: "Barq - Fast and Reliable Delivery Services",
-  description:
-    "Experience swift and dependable delivery services with Barq. Sign up now to get started!",
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "HomePage.metadata" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function HomePage() {
   return (
