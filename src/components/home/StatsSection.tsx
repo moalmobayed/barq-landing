@@ -1,20 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import CountUp from "react-countup";
 
 const StatsSection: React.FC = () => {
   const stats = [
     {
-      number: "1,879+",
+      value: 1879,
+      suffix: "+",
       label: "Positive Reviews",
       icon: "/icons/positive-reviews.png",
     },
     {
-      number: "3,855+",
+      value: 3855,
+      suffix: "+",
       label: "Restaurant Listings",
       icon: "/icons/restaurant-listings.png",
     },
     {
-      number: "985M+",
+      value: 985,
+      suffix: "M+",
       label: "Successful deliveries",
       icon: "/icons/successful-deliveries.png",
     },
@@ -47,7 +53,14 @@ const StatsSection: React.FC = () => {
 
               {/* Number */}
               <div className="font-lexend mb-2 text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                {stat.number}
+                <CountUp
+                  end={stat.value}
+                  duration={2.5}
+                  separator=","
+                  suffix={stat.suffix}
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
               </div>
 
               {/* Label */}
