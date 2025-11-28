@@ -35,8 +35,7 @@
   },
   "HeroSection": {
     "titlePrefix": "The Fastest & best",
-    "titleSuffix": "services",
-    "inYourTown": "in your town",
+    "titleSuffix": "services in your town",
     "description": "We commit to delivering your food to you within 30 minutes. if we would fail, we will give the food free.",
     "getItOn": "GET IT ON",
     "googlePlay": "Google Play",

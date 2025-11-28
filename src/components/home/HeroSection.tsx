@@ -22,17 +22,17 @@ const HeroSection: React.FC = () => {
           <h1
             className={`${locale === "ar" ? "font-cairo" : "font-lexend"} text-brand-blue text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl`}
           >
-            {t("titlePrefix")} <br />
+            {t("titlePrefix")}
+            <br />
             <TextType
               text={t.raw("typingText") as string[]}
               typingSpeed={150}
               pauseDuration={1500}
               cursorCharacter="|"
               className="text-brand-orange"
-            />{" "}
-            {t("titleSuffix")}
+            />
             <br />
-            {t("inYourTown")}
+            {t("titleSuffix")}
           </h1>
 
           <p
@@ -103,7 +103,7 @@ const HeroSection: React.FC = () => {
               animate
               loop
               loopDelay={700}
-              className="mb-1 flex size-9 items-center justify-center rounded-full bg-brand-blue text-base text-white sm:text-lg"
+              className="bg-brand-blue mb-1 flex size-9 items-center justify-center rounded-full text-base text-white sm:text-lg"
             >
               <BellRing className="size-5" />
             </AnimateIcon>
@@ -120,7 +120,7 @@ const HeroSection: React.FC = () => {
               animate
               loop
               loopDelay={700}
-              className="block h-auto justify-items-center text-brand-blue"
+              className="text-brand-blue block h-auto justify-items-center"
             >
               <MapPin />
             </AnimateIcon>
@@ -137,7 +137,7 @@ const HeroSection: React.FC = () => {
               animate
               loop
               loopDelay={700}
-              className="block h-auto justify-items-center text-brand-blue"
+              className="text-brand-blue block h-auto justify-items-center"
             >
               <BadgeCheck />
             </AnimateIcon>

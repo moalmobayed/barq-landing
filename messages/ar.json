@@ -35,8 +35,7 @@
   },
   "HeroSection": {
     "titlePrefix": "أسرع وأفضل خدمات",
-    "titleSuffix": "",
-    "inYourTown": "في مدينتك",
+    "titleSuffix": "في مدينتك",
     "description": "نلتزم بتوصيل طعامك إليك في غضون 30 دقيقة. إذا فشلنا، سنقدم لك الطعام مجانًا.",
     "getItOn": "احصل عليه من",
     "googlePlay": "جوجل بلاي",
