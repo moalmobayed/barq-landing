@@ -56,7 +56,7 @@ const WhyChooseUsSection: React.FC = () => {
             return (
               <div
                 key={feature.id}
-                className="group flex gap-4 rounded-[20px] border border-[#E3D3CF] bg-[#FAF9F5] p-8 transition-all duration-300 hover:border-orange-200 hover:shadow-lg sm:gap-6 sm:p-8"
+                className="group flex gap-4 rounded-[20px] border border-[#E3D3CF] bg-[#FAF9F5] p-8 transition-all duration-300 hover:border-orange-300 hover:shadow-lg sm:gap-6 sm:p-8"
               >
                 <div className="bg-brand-orange flex size-14 shrink-0 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 sm:size-16">
                   <Icon
