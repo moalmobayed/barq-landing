@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { Globe } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const locale = useLocale();
@@ -12,7 +13,17 @@ const Navbar: React.FC = () => {
   const [isPartnersOpen, setIsPartnersOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
   const pathname = usePathname();
+
+  const handleLanguageSwitch = () => {
+    const newLocale = locale === "en" ? "ar" : "en";
+    let path = pathname;
+    if (path.startsWith(`/${locale}`)) {
+      path = path.replace(`/${locale}`, "");
+    }
+    router.push(`/${newLocale}${path}`);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -129,8 +140,17 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Desktop Contact Button */}
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-4 lg:flex">
+          {/* Language Switcher - Desktop */}
+          <button
+            onClick={handleLanguageSwitch}
+            className="hover:text-brand-orange text-brand-blue flex items-center gap-2 text-sm font-medium transition-colors"
+          >
+            <Globe className="h-4 w-4" />
+            {locale === "en" ? "العربية" : "English"}
+          </button>
+
+          {/* Desktop Contact Button */}
           <Link
             href="#why-us"
             className="bg-brand-orange rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 xl:px-6 xl:py-3"
@@ -243,6 +263,18 @@ const Navbar: React.FC = () => {
                 </div>
               )}
             </div>
+
+            {/* Mobile Language Switcher */}
+            <button
+              onClick={() => {
+                handleLanguageSwitch();
+                setIsMobileMenuOpen(false);
+              }}
+              className="hover:text-brand-orange flex w-full items-center gap-2 rounded-lg px-3 py-2 text-start text-base font-medium text-gray-700 hover:bg-gray-50"
+            >
+              <Globe className="h-4 w-4" />
+              {locale === "en" ? "العربية" : "English"}
+            </button>
 
             {/* Mobile Contact Button */}
             <div className="pt-2">
