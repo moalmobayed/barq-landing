@@ -1,0 +1,184 @@
+{
+  "HomePage": {
+    "title": "Welcome to Barq",
+    "metadata": {
+      "title": "Barq - Fast and Reliable Delivery Services",
+      "description": "Experience swift and dependable delivery services with Barq. Sign up now to get started!"
+    }
+  },
+  "RootLayout": {
+    "title": {
+      "default": "Barq - Fast and Reliable Food Delivery in Egypt",
+      "template": "%s | Barq"
+    },
+    "description": "Experience swift and dependable food delivery services with Barq. Order from 3,855+ restaurants across Egypt. Join 985M+ successful deliveries with 1,879+ positive reviews.",
+    "openGraph": {
+      "siteName": "Barq",
+      "title": "Barq - Fast and Reliable Food Delivery in Egypt",
+      "description": "Experience swift and dependable food delivery services with Barq. Order from 3,855+ restaurants across Egypt."
+    },
+    "twitter": {
+      "title": "Barq - Fast and Reliable Food Delivery in Egypt",
+      "description": "Experience swift and dependable food delivery services with Barq. Order from 3,855+ restaurants across Egypt."
+    }
+  },
+  "Navbar": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "features": "Features",
+    "howItWorks": "How it work",
+    "whyUs": "Why Us",
+    "partners": "Partners",
+    "drivers": "Drivers",
+    "merchants": "Merchants",
+    "contactUs": "Contact US"
+  },
+  "HeroSection": {
+    "titlePrefix": "The Fastest & best",
+    "titleSuffix": "services",
+    "inYourTown": "in your town",
+    "description": "We commit to delivering your food to you within 30 minutes. if we would fail, we will give the food free.",
+    "getItOn": "GET IT ON",
+    "googlePlay": "Google Play",
+    "downloadOn": "Download on the",
+    "appStore": "App Store",
+    "delivery30Min": "30 min delivery",
+    "trackLiveMap": "Track live map",
+    "typingText": [
+      "food delivery",
+      "grocery shopping",
+      "package delivery",
+      "courier services",
+      "pharmacy delivery",
+      "restaurant orders",
+      "fresh produce",
+      "express shipping",
+      "meal delivery",
+      "home essentials"
+    ]
+  },
+  "DishesSection": {
+    "badge": "YUMMY DISHES!",
+    "title": "Access Thousands of Dishes with Just a Tap",
+    "description": "Our system grants you instant access to thousands of dishes and diverse cuisines—all it takes is a single tap on your screen."
+  },
+  "DownloadAppSection": {
+    "badge": "DOWNLOAD",
+    "title": "Download app to enjoy 4500+ foods from 1200+ restaurants",
+    "description": "Download our app to your phone from the stores and start enjoying a wealth of exclusive features and benefits immediately",
+    "getItOn": "GET IT ON",
+    "googlePlay": "Google Play",
+    "downloadOn": "Download on the",
+    "appStore": "App Store"
+  },
+  "FeaturesSection": {
+    "headerBadge": "ADVANCED FEATURES",
+    "headerTitle": "Win-win for restaurants & users",
+    "restaurantBadge": "FOR RESTAURANT",
+    "restaurantTitle": "Effortless management of restaurant operations.",
+    "restaurantDescription": "Our system provides you with a centralized dashboard for full control over workflow, from receiving orders to generating financial reports, allowing you to focus on your food quality and customer service.",
+    "restaurantFeature1Title": "Handling of orders",
+    "restaurantFeature1Desc": "Orders are instantly and accurately routed to the kitchen or delivery department, significantly reducing waiting time and boosting customer satisfaction.",
+    "restaurantFeature2Title": "Sale system connectivity",
+    "restaurantFeature2Desc": "Connect your ordering app directly to your Point of Sale (POS) system. Log all sales, track inventory, and issue accurate invoices, all from one unified platform.",
+    "registerButton": "Register Your Restaurant",
+    "customerBadge": "FOR CUSTOMER",
+    "customerTitle": "Seamless ordering process from app",
+    "customerDescription": "Order your favorite meal or products with ultimate ease and speed! Our app is designed to provide an intuitive and rapid user experience, from selecting the item to completing the payment in simple, comfortable steps.",
+    "customerFeature1Title": "Delivery within 3 min",
+    "customerFeature1Desc": "The fastest delivery in the city! Rely on our smart fleet to ensure your order arrives fresh and on time, so you can enjoy your product without the wait.",
+    "customerFeature2Title": "Live map tracking",
+    "customerFeature2Desc": "Follow your order step-by-step in real-time. Watch the delivery agent's location directly on the map and accurately predict the arrival time for total peace of mind.",
+    "downloadButton": "Download App",
+    "newOrder": "Received new order",
+    "orderConfirmed": "Your order has confirmed",
+    "ongoingOrder": "Ongoing Order",
+    "estimatedDelivery": "Estimated Delivery"
+  },
+  "HowItWorksSection": {
+    "badge": "EASY STEPS",
+    "title": "How it Works",
+    "step1Title": "Download App & create a free account",
+    "step1Desc": "Simply download the app and create your profile. Unlock instant access to every restaurant, menu, and deal in your area.",
+    "step2Title": "Place orders at your preferred eatery",
+    "step2Desc": "Customize your meal, and complete your payment. Our smart filtering makes it fast and fun to discover your next favorite.",
+    "step3Title": "Get it delivered directly to your home, effortlessly",
+    "step3Desc": "Track your order from the kitchen to your door. Our drivers ensure lightning-fast delivery, so you can enjoy your perfect meal.",
+    "discountText": "Get 50% off on your first order! Grab it now.",
+    "getItOn": "GET IT ON",
+    "googlePlay": "Google Play",
+    "downloadOn": "Download on the",
+    "appStore": "App Store"
+  },
+  "RegisterRestaurantSection": {
+    "badge": "REGISTER RESTAURANT",
+    "title": "Begin gaining more customers today",
+    "button": "Register Restaurant"
+  },
+  "StatsSection": {
+    "reviews": "Positive Reviews",
+    "listings": "Restaurant Listings",
+    "deliveries": "Successful deliveries"
+  },
+  "SupportSection": {
+    "title": "Need support?",
+    "description": "Lorem ipsum is simply dummy text of the printing.",
+    "emailButton": "Email us"
+  },
+  "TestimonialsSection": {
+    "badge": "TESTIMONIALS",
+    "title": "Our happy clients",
+    "description": "See why thousands of users and hundreds of restaurants trust our platform every day. We deliver results you can rely on.",
+    "readMoreButton": "Read More Success Story",
+    "reviews": [
+      {
+        "title": "Quality and Healthy Food",
+        "review": "Simply dummy text of the printing and typesetting indus try lorem ipsum has been the industrys standard."
+      },
+      {
+        "title": "Easy to use App, Much Helpful!",
+        "review": "Indus try lorem ipsum has been the industrys standard dummy textever Print and tysetting."
+      },
+      {
+        "title": "Supportive staff!",
+        "review": "Lorem ipsum is simply dummy text of the printing and dummy text typesetting industry lorem ipsum has been."
+      }
+    ]
+  },
+  "TrustedRestaurantsSection": {
+    "title": "Trusted by",
+    "trustedBy": "2.5k+ restaurant",
+    "registerButton": "Register Your Restaurant"
+  },
+  "WhyChooseUsSection": {
+    "badge": "WHY USE BARQ",
+    "title": "Why choose us",
+    "description": "We are the only platform that truly unites speed, selection, and reliability for both customers and businesses.",
+    "feature1Title": "Delivery in 30 min",
+    "feature1Desc": "Get your favorite meals delivered fresh and fast to your door in just 30 minutes! Enjoy the convenience!",
+    "feature2Title": "Quality Food",
+    "feature2Desc": "Enjoy premium meals from top local restaurants, expertly crafted to satisfy your taste and elevate your dining experience!",
+    "feature3Title": "Track Live Map",
+    "feature3Desc": "Easily track your order in real-time with our live map feature, ultimate convenience and keeping you updated every step of the way!"
+  },
+  "Footer": {
+    "quickLinksTitle": "Quick Links",
+    "subscribeTitle": "Subscribe us",
+    "subscribeText": "Subscribe our newsletter to receive latest updates regularly from us!",
+    "emailPlaceholder": "Enter your email",
+    "subscribeButtonAria": "Subscribe to newsletter",
+    "disclaimer": "By clicking send link you agree to receive message.",
+    "copyright": "© Copyrights {year}. All rights reserved.",
+    "links": {
+      "home": "Home",
+      "aboutUs": "About us",
+      "features": "Features",
+      "blog": "Blog",
+      "contactUs": "Contact us"
+    },
+    "getItOn": "GET IT ON",
+    "googlePlay": "Google Play",
+    "downloadOn": "Download on the",
+    "appStore": "App Store"
+  }
+}
