@@ -126,7 +126,7 @@
   },
   "TestimonialsSection": {
     "badge": "TESTIMONIALS",
-    "title": "Our happy clients",
+    "title": "Our Satisfied Customers",
     "description": "See why thousands of users and hundreds of restaurants trust our platform every day. We deliver results you can rely on.",
     "readMoreButton": "Read More Success Story",
     "reviews": [
@@ -179,5 +179,11 @@
     "googlePlay": "Google Play",
     "downloadOn": "Download on the",
     "appStore": "App Store"
+  },
+  "NotFound": {
+    "title": "Error",
+    "description": "We can't find the page you are looking for!",
+    "backToHome": "Back to Home",
+    "copyright": "© {year} - Mohamed Tarek - All rights reserved."
   }
 }

@@ -179,5 +179,11 @@
     "googlePlay": "جوجل بلاي",
     "downloadOn": "حمله من",
     "appStore": "آب ستور"
+  },
+  "NotFound": {
+    "title": "خطأ",
+    "description": "لا يمكننا العثور على الصفحة التي تبحث عنها!",
+    "backToHome": "الرجوع إلى الصفحة الرئيسية",
+    "copyright": "© {year} - Mohamed Tarek - جميع الحقوق محفوظة."
   }
 }
