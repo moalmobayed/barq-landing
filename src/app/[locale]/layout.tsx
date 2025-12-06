@@ -52,20 +52,11 @@ export async function generateMetadata({
       siteName: t("openGraph.siteName"),
       title: t("openGraph.title"),
       description: t("openGraph.description"),
-      images: [
-        {
-          url: "/images/logo/barq-logo.png",
-          width: 192,
-          height: 192,
-          alt: "Barq Food Delivery",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("twitter.title"),
       description: t("twitter.description"),
-      images: ["/images/logo/barq-logo.png"],
     },
     robots: {
       index: true,
