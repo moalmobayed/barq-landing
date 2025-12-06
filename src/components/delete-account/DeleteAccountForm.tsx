@@ -7,6 +7,7 @@ import Input from "@/components/form/InputField";
 import Label from "@/components/form/Label";
 import Button from "@/components/common/Button";
 import { API_BASE_URL } from "@/config/api.config";
+import { useTranslations } from "next-intl";
 
 type Step = "phone" | "otp";
 
@@ -16,6 +17,7 @@ interface FormData {
 }
 
 const DeleteAccountForm: React.FC = () => {
+  const t = useTranslations("DeleteAccount");
   const [step, setStep] = useState<Step>("phone");
   const [formData, setFormData] = useState<FormData>({
     phoneNumber: "",
@@ -39,9 +41,7 @@ const DeleteAccountForm: React.FC = () => {
 
     // Validate phone number
     if (!validateEgyptianPhone(formData.phoneNumber)) {
-      setError(
-        "رقم الهاتف غير صحيح. يجب أن يكون رقم مصري صحيح (مثال: 01012345678)",
-      );
+      setError(t("validation.invalidPhone"));
       return;
     }
 
@@ -57,19 +57,14 @@ const DeleteAccountForm: React.FC = () => {
       );
 
       if (response.data) {
-        setSuccess(
-          response.data.message || "تم إرسال رمز التحقق إلى رقم هاتفك",
-        );
+        setSuccess(response.data.message || t("messages.otpSent"));
         setStep("otp");
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        setError(
-          err.response?.data?.message ||
-            "حدث خطأ أثناء إرسال رمز التحقق. يرجى المحاولة مرة أخرى",
-        );
+        setError(err.response?.data?.message || t("messages.otpError"));
       } else {
-        setError("حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى");
+        setError(t("messages.unexpectedError"));
       }
     } finally {
       setLoading(false);
@@ -84,7 +79,7 @@ const DeleteAccountForm: React.FC = () => {
 
     // Validate OTP (4 digits)
     if (!/^\d{4}$/.test(formData.otp)) {
-      setError("رمز التحقق يجب أن يكون 4 أرقام");
+      setError(t("validation.invalidOtp"));
       return;
     }
 
@@ -103,10 +98,7 @@ const DeleteAccountForm: React.FC = () => {
       );
 
       if (response.data) {
-        setSuccess(
-          response.data.message ||
-            "تم حذف حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية...",
-        );
+        setSuccess(response.data.message || t("messages.deleteSuccess"));
         // Redirect after 3 seconds
         setTimeout(() => {
           window.location.href = "/";
@@ -114,12 +106,9 @@ const DeleteAccountForm: React.FC = () => {
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        setError(
-          err.response?.data?.message ||
-            "رمز التحقق غير صحيح أو انتهت صلاحيته. يرجى المحاولة مرة أخرى",
-        );
+        setError(err.response?.data?.message || t("messages.deleteError"));
       } else {
-        setError("حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى");
+        setError(t("messages.unexpectedError"));
       }
     } finally {
       setLoading(false);
@@ -149,12 +138,12 @@ const DeleteAccountForm: React.FC = () => {
       {step === "phone" && (
         <Form onSubmit={handlePhoneSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="phoneNumber">رقم الهاتف المحمول</Label>
+            <Label htmlFor="phoneNumber">{t("form.phoneLabel")}</Label>
             <Input
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
-              placeholder="01012345678"
+              placeholder={t("form.phonePlaceholder")}
               value={formData.phoneNumber}
               onChange={handleInputChange}
               dir="ltr"
@@ -163,7 +152,7 @@ const DeleteAccountForm: React.FC = () => {
               error={!!error}
             />
             <p className="mt-1.5 text-xs text-gray-600">
-              أدخل رقم هاتفك المسجل في التطبيق
+              {t("form.phoneHelp")}
             </p>
           </div>
 
@@ -186,7 +175,7 @@ const DeleteAccountForm: React.FC = () => {
             className="w-full"
             type="submit"
           >
-            {loading ? "جاري الإرسال..." : "إرسال رمز التحقق"}
+            {loading ? t("form.sendingOtpButton") : t("form.sendOtpButton")}
           </Button>
         </Form>
       )}
@@ -195,19 +184,19 @@ const DeleteAccountForm: React.FC = () => {
       {step === "otp" && (
         <Form onSubmit={handleOtpSubmit} className="space-y-4">
           <div className="mb-4 text-center">
-            <p className="text-sm text-gray-600">تم إرسال رمز التحقق إلى</p>
+            <p className="text-sm text-gray-600">{t("form.otpSentTo")}</p>
             <p className="mt-1 text-lg font-medium text-gray-900" dir="ltr">
               {formData.phoneNumber}
             </p>
           </div>
 
           <div>
-            <Label htmlFor="otp">رمز التحقق (OTP)</Label>
+            <Label htmlFor="otp">{t("form.otpLabel")}</Label>
             <Input
               type="text"
               id="otp"
               name="otp"
-              placeholder="0000"
+              placeholder={t("form.otpPlaceholder")}
               value={formData.otp}
               onChange={handleInputChange}
               max="4"
@@ -217,9 +206,7 @@ const DeleteAccountForm: React.FC = () => {
               error={!!error}
               className="text-center text-2xl tracking-widest text-gray-900"
             />
-            <p className="mt-1.5 text-xs text-gray-600">
-              أدخل رمز التحقق المكون من 4 أرقام
-            </p>
+            <p className="mt-1.5 text-xs text-gray-600">{t("form.otpHelp")}</p>
           </div>
 
           {error && (
@@ -242,7 +229,7 @@ const DeleteAccountForm: React.FC = () => {
               className="w-full"
               type="submit"
             >
-              {loading ? "جاري التحقق..." : "تأكيد وحذف الحساب"}
+              {loading ? t("form.verifyingButton") : t("form.verifyButton")}
             </Button>
 
             <Button
@@ -252,7 +239,7 @@ const DeleteAccountForm: React.FC = () => {
               onClick={handleBackToPhone}
               className="w-full"
             >
-              العودة لتعديل رقم الهاتف
+              {t("form.backButton")}
             </Button>
           </div>
         </Form>
