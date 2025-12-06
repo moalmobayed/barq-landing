@@ -180,6 +180,44 @@
     "downloadOn": "Download on the",
     "appStore": "App Store"
   },
+  "DeleteAccount": {
+    "metadata": {
+      "title": "Delete Account | Barq",
+      "description": "Delete your account from Barq delivery app"
+    },
+    "page": {
+      "logoAlt": "Barq Logo",
+      "title": "Delete Account",
+      "subtitle": "To delete your account, please enter your phone number and verify it",
+      "warningTitle": "Warning:",
+      "warningText": "Account deletion is permanent and cannot be undone. All your data will be permanently deleted."
+    },
+    "form": {
+      "phoneLabel": "Mobile Phone Number",
+      "phonePlaceholder": "01012345678",
+      "phoneHelp": "Enter your phone number registered in the app",
+      "otpLabel": "Verification Code (OTP)",
+      "otpPlaceholder": "0000",
+      "otpHelp": "Enter the 4-digit verification code",
+      "otpSentTo": "Verification code sent to",
+      "sendOtpButton": "Send Verification Code",
+      "sendingOtpButton": "Sending...",
+      "verifyButton": "Confirm and Delete Account",
+      "verifyingButton": "Verifying...",
+      "backButton": "Back to Edit Phone Number"
+    },
+    "validation": {
+      "invalidPhone": "Invalid phone number. Must be a valid Egyptian number (example: 01012345678)",
+      "invalidOtp": "Verification code must be 4 digits"
+    },
+    "messages": {
+      "otpSent": "Verification code sent to your phone number",
+      "otpError": "Error sending verification code. Please try again",
+      "deleteSuccess": "Your account has been successfully deleted. You will be redirected to the homepage...",
+      "deleteError": "Verification code is incorrect or expired. Please try again",
+      "unexpectedError": "An unexpected error occurred. Please try again"
+    }
+  },
   "NotFound": {
     "title": "Error",
     "description": "We can't find the page you are looking for!",
