@@ -5,9 +5,7 @@ import axios from "axios";
 import Form from "@/components/form/Form";
 import Input from "@/components/form/InputField";
 import Label from "@/components/form/Label";
-import Button from "@/components/common/Button";
 import { API_BASE_URL } from "@/config/api.config";
-import { useTranslations } from "next-intl";
 
 type Step = "phone" | "otp";
 
@@ -17,7 +15,6 @@ interface FormData {
 }
 
 const DeleteAccountForm: React.FC = () => {
-  const t = useTranslations("DeleteAccount");
   const [step, setStep] = useState<Step>("phone");
   const [formData, setFormData] = useState<FormData>({
     phoneNumber: "",
@@ -41,7 +38,9 @@ const DeleteAccountForm: React.FC = () => {
 
     // Validate phone number
     if (!validateEgyptianPhone(formData.phoneNumber)) {
-      setError(t("validation.invalidPhone"));
+      setError(
+        "رقم الهاتف غير صحيح. يجب أن يكون رقم مصري صحيح (مثال: 01012345678)",
+      );
       return;
     }
 
@@ -57,14 +56,19 @@ const DeleteAccountForm: React.FC = () => {
       );
 
       if (response.data) {
-        setSuccess(response.data.message || t("messages.otpSent"));
+        setSuccess(
+          response.data.message || "تم إرسال رمز التحقق إلى رقم هاتفك",
+        );
         setStep("otp");
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        setError(err.response?.data?.message || t("messages.otpError"));
+        setError(
+          err.response?.data?.message ||
+            "حدث خطأ أثناء إرسال رمز التحقق. يرجى المحاولة مرة أخرى",
+        );
       } else {
-        setError(t("messages.unexpectedError"));
+        setError("حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى");
       }
     } finally {
       setLoading(false);
@@ -79,7 +83,7 @@ const DeleteAccountForm: React.FC = () => {
 
     // Validate OTP (4 digits)
     if (!/^\d{4}$/.test(formData.otp)) {
-      setError(t("validation.invalidOtp"));
+      setError("رمز التحقق يجب أن يكون 4 أرقام");
       return;
     }
 
@@ -98,7 +102,10 @@ const DeleteAccountForm: React.FC = () => {
       );
 
       if (response.data) {
-        setSuccess(response.data.message || t("messages.deleteSuccess"));
+        setSuccess(
+          response.data.message ||
+            "تم حذف حسابك بنجاح. سيتم تحويلك إلى الصفحة الرئيسية...",
+        );
         // Redirect after 3 seconds
         setTimeout(() => {
           window.location.href = "/";
@@ -106,9 +113,12 @@ const DeleteAccountForm: React.FC = () => {
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        setError(err.response?.data?.message || t("messages.deleteError"));
+        setError(
+          err.response?.data?.message ||
+            "رمز التحقق غير صحيح أو انتهت صلاحيته. يرجى المحاولة مرة أخرى",
+        );
       } else {
-        setError(t("messages.unexpectedError"));
+        setError("حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى");
       }
     } finally {
       setLoading(false);
@@ -138,12 +148,12 @@ const DeleteAccountForm: React.FC = () => {
       {step === "phone" && (
         <Form onSubmit={handlePhoneSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="phoneNumber">{t("form.phoneLabel")}</Label>
+            <Label htmlFor="phoneNumber">رقم الهاتف المحمول</Label>
             <Input
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
-              placeholder={t("form.phonePlaceholder")}
+              placeholder="01012345678"
               value={formData.phoneNumber}
               onChange={handleInputChange}
               dir="ltr"
@@ -152,7 +162,7 @@ const DeleteAccountForm: React.FC = () => {
               error={!!error}
             />
             <p className="mt-1.5 text-xs text-gray-600">
-              {t("form.phoneHelp")}
+              أدخل رقم هاتفك المسجل في التطبيق
             </p>
           </div>
 
@@ -168,15 +178,13 @@ const DeleteAccountForm: React.FC = () => {
             </div>
           )}
 
-          <Button
-            variant="primary"
-            size="md"
-            disabled={loading || !formData.phoneNumber}
-            className="w-full"
+          <button
             type="submit"
+            disabled={loading || !formData.phoneNumber}
+            className="bg-primary hover:bg-primary/90 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white transition-colors disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {loading ? t("form.sendingOtpButton") : t("form.sendOtpButton")}
-          </Button>
+            {loading ? "جاري الإرسال..." : "إرسال رمز التحقق"}
+          </button>
         </Form>
       )}
 
@@ -184,19 +192,19 @@ const DeleteAccountForm: React.FC = () => {
       {step === "otp" && (
         <Form onSubmit={handleOtpSubmit} className="space-y-4">
           <div className="mb-4 text-center">
-            <p className="text-sm text-gray-600">{t("form.otpSentTo")}</p>
+            <p className="text-sm text-gray-600">تم إرسال رمز التحقق إلى</p>
             <p className="mt-1 text-lg font-medium text-gray-900" dir="ltr">
               {formData.phoneNumber}
             </p>
           </div>
 
           <div>
-            <Label htmlFor="otp">{t("form.otpLabel")}</Label>
+            <Label htmlFor="otp">رمز التحقق (OTP)</Label>
             <Input
               type="text"
               id="otp"
               name="otp"
-              placeholder={t("form.otpPlaceholder")}
+              placeholder="0000"
               value={formData.otp}
               onChange={handleInputChange}
               max="4"
@@ -206,7 +214,9 @@ const DeleteAccountForm: React.FC = () => {
               error={!!error}
               className="text-center text-2xl tracking-widest text-gray-900"
             />
-            <p className="mt-1.5 text-xs text-gray-600">{t("form.otpHelp")}</p>
+            <p className="mt-1.5 text-xs text-gray-600">
+              أدخل رمز التحقق المكون من 4 أرقام
+            </p>
           </div>
 
           {error && (
@@ -222,25 +232,22 @@ const DeleteAccountForm: React.FC = () => {
           )}
 
           <div className="space-y-2">
-            <Button
-              variant="primary"
-              size="md"
-              disabled={loading || formData.otp.length !== 4}
-              className="w-full"
+            <button
               type="submit"
+              disabled={loading || formData.otp.length !== 4}
+              className="bg-primary hover:bg-primary/90 w-full rounded-lg px-4 py-3 text-sm font-semibold text-white transition-colors disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {loading ? t("form.verifyingButton") : t("form.verifyButton")}
-            </Button>
+              {loading ? "جاري التحقق..." : "تأكيد وحذف الحساب"}
+            </button>
 
-            <Button
-              variant="outline"
-              size="md"
+            <button
+              type="button"
               disabled={loading}
               onClick={handleBackToPhone}
-              className="w-full"
+              className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {t("form.backButton")}
-            </Button>
+              العودة لتعديل رقم الهاتف
+            </button>
           </div>
         </Form>
       )}
