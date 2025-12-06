@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
                 alt="Barq Logo"
                 fill
                 sizes="(max-width: 768px) 80px, 96px"
-                quality={90}
+                quality={75}
                 className="object-contain"
                 priority
               />
@@ -270,7 +270,7 @@ const Navbar: React.FC = () => {
                 handleLanguageSwitch();
                 setIsMobileMenuOpen(false);
               }}
-              className={`text-brand-orange flex w-full items-center gap-2 rounded-lg px-3 py-2 text-start text-base justify-center font-medium hover:bg-gray-50 ${locale === "en" && "font-cairo"}`}
+              className={`text-brand-orange flex w-full items-center justify-center gap-2 rounded-lg px-3 py-2 text-start text-base font-medium hover:bg-gray-50 ${locale === "en" && "font-cairo"}`}
             >
               <Globe className="h-4 w-4" />
               {locale === "en" ? "العربية" : "English"}

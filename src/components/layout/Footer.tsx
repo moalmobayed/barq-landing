@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                 alt="Barq Logo"
                 width={80}
                 height={32}
-                quality={90}
+                quality={75}
                 className="h-24 w-auto"
               />
             </Link>
@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-100 transition-colors hover:text-brand-orange"
+                    className="hover:text-brand-orange text-sm text-gray-100 transition-colors"
                   >
                     {link.label}
                   </Link>

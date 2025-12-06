@@ -78,7 +78,7 @@ const TrustedRestaurantsSection: React.FC = () => {
                   alt={restaurant.alt}
                   width={120}
                   height={48}
-                  quality={80}
+                  quality={75}
                   className="h-auto w-full max-w-[150px] object-contain transition-all duration-300 hover:scale-110 sm:max-w-40"
                 />
               </div>

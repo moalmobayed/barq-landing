@@ -58,7 +58,6 @@ const TestimonialsSection: React.FC = () => {
         width={32}
         height={32}
         className="absolute top-40 left-4 hidden size-28 lg:block"
-        quality={100}
       />
 
       {/* Decorative Heart */}
@@ -68,7 +67,6 @@ const TestimonialsSection: React.FC = () => {
         width={32}
         height={32}
         className="absolute right-4 bottom-20 hidden size-28 lg:block"
-        quality={100}
       />
 
       {/* Header */}

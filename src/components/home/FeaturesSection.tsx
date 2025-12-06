@@ -71,7 +71,7 @@ const FeaturesSection: React.FC = () => {
               alt="Special Offer Dashboard"
               width={200}
               height={133}
-              quality={80}
+              quality={75}
               className="h-auto w-full"
             />
           </div>

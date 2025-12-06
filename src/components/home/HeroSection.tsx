@@ -154,7 +154,6 @@ const HeroSection: React.FC = () => {
             alt="Location"
             width={32}
             height={32}
-            quality={100}
             className="absolute -start-12 bottom-0 z-20 hidden w-24 lg:block"
           />
 
@@ -163,7 +162,7 @@ const HeroSection: React.FC = () => {
             alt="Barq App Interface"
             width={400}
             height={840}
-            quality={85}
+            quality={75}
             className="relative z-10 h-auto w-full max-w-[300px]"
             priority
           />
